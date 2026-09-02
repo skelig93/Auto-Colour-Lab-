@@ -1,20 +1,48 @@
 # Auto Paint Lab
 
-Static website for Auto Paint Lab — independent sole-trader automotive spray painting and paint repairs in Auckland.
+Independent car spray painting and paint repairs, Auckland. Owner-operator / sole trader: Anthony.
+
+## Features
+
+- Instant preliminary estimate from NZ registration plate
+- Colour / paint-system comparison (solid, metallic, pearl, 3-stage)
+- Booking and quote forms (local storage for demo)
+- Mobile paint support, motorbike painting, services, blog, contact, terms pages
+- SEO-friendly meta titles, descriptions and keywords
+
+## Instant estimate
+
+1. Enter a NZ registration (try `APL1`, `HILUX`, `RANGER`, or `DEMO`).
+2. Vehicle details and colour paint-system pricing are compared.
+3. Set the repair area. **632 cm² = $300** solid paint (then metallic / pearl / 3-stage multipliers).
+4. Photo upload is optional.
+5. Generate the estimate, then continue to booking.
+
+Vehicle lookup uses a local NZ-style catalogue for consistent demos. For live accuracy, integrate the [CarJam API](https://www.carjam.co.nz) (see comments in `src/lib/vehicles.ts`).
+
+Pickup is +$80. Motorcycle pickup stays included in bike paint pricing.
 
 ## Contact
-- Owner / Operator: Anthony
-- Phone: 020 411 04094
-- Email: currently empty (configure FormSubmit in booking.html when ready)
 
-## Changes in this revision
-- Blended sole-trader / personal-service messaging (lean overheads, competitive pricing, direct communication, professional quality control)
-- Added cleaned van image to homepage as the mobile paint support vehicle (not for transporting customer vehicles; branding removed from photo)
-- Owner/Operator Anthony + phone added on booking page and footer
-- SEO: stronger meta title/description, improved schema, clearer people-first copy
-- Phone standardised to 020 411 04094 site-wide
+Owner / operator Anthony — 020 411 04094
 
-## Before publishing
-1. Add your preferred email to the FormSubmit action in `booking.html` when ready.
-2. Confirm domain in canonicals/sitemap if different from autopaintlab.co.nz.
-3. Van image has branding patched out; re-shoot or professionally retouch for best result.
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open http://localhost:8080
+
+## Build
+
+```bash
+npm run build
+```
+
+## Deploy on GitHub / Vercel / Netlify
+
+This is a TanStack Start + Vite project. Push to GitHub and connect to Vercel or Netlify for automatic deploys. Ensure Node 20+ is used.
+
+For pure static hosting, run the build and serve the output directory produced by Vite/Nitro.
