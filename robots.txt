@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://autopaintlab.co.nz/sitemap.xml
