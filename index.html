@@ -16,7 +16,7 @@
 :root{
   --bg:#070809;--card:#111417;--card2:#171b1f;--text:#f5f5f2;--muted:#aeb4ba;
   --line:#2a2f34;--accent:#ff5a36;--accent2:#ff9d46;--max:1180px;
-  --header-h:auto;
+  --header-h:96px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -37,21 +37,22 @@ header{
   gap:16px;padding:12px 0;
 }
 .brand{
-  display:flex;align-items:center;gap:18px;flex-shrink:0;
+  display:flex;align-items:center;gap:14px;flex-shrink:0;
   text-decoration:none;color:inherit;
 }
 .brand-logo{
-  width:min(280px,46vw);height:min(280px,46vw);
-  max-width:280px;max-height:280px;
-  border-radius:50%;
+  width:auto;height:auto;
+  max-height:110px;max-width:min(320px,58vw);
+  border-radius:0;
   object-fit:contain;
   object-position:center center;
-  border:3px solid rgba(255,90,54,.55);
-  box-shadow:0 0 0 5px rgba(255,90,54,.12),0 12px 32px rgba(0,0,0,.4);
-  background:#0a0a0a;
-  padding:10px;
+  border:none;
+  box-shadow:none;
+  background:transparent;
+  padding:0;
 }
-.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text{display:none}/* full logo includes wordmark */
+.brand-text-off{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{
   font-weight:950;letter-spacing:-.045em;font-size:clamp(1.6rem,4vw,3.1rem);
   text-transform:uppercase;
@@ -120,15 +121,14 @@ header{
 .mobile-panel a:hover{color:var(--accent)}
 
 @media(max-width:1100px){
-  .brand-logo{width:min(200px,40vw);height:min(200px,40vw);max-width:200px;max-height:200px;padding:8px
-  .brand-name{font-size:2rem}
+  .brand-logo{max-height:90px;max-width:min(260px,50vw)
   .brand-tag{font-size:.72rem}
   :root{--header-h:160px}
 }
 @media(max-width:960px){
   .links, .nav-cta{display:none}
   .nav-toggle{display:inline-flex}
-  .brand-logo{width:min(120px,32vw);height:min(120px,32vw);max-width:120px;max-height:120px;object-fit:contain;padding:6px}
+  .brand-logo{max-height:72px;max-width:min(200px,48vw)}
   .brand-name{font-size:1.55rem}
   .brand-tag{font-size:.65rem}
   :root{--header-h:120px}
@@ -327,7 +327,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Auto Paint Lab home">
-      <img class="brand-logo" src="assets/images/logo.jpg" alt="Auto Paint Lab logo" width="720" height="720">
+      <img class="brand-logo" src="assets/images/logo.jpg" alt="Auto Paint Lab logo" width="320" height="270">
       <span class="brand-text">
         <span class="brand-name">AUTO <b>PAINT LAB</b></span>
         <span class="brand-tag">Auckland paint specialists</span>
@@ -410,6 +410,16 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 </div>
 
 
+<section class="mobile-promo-section">
+  <div class="wrap">
+    <a class="mobile-promo-card" href="mobile-paint.html">
+      <span class="mobile-promo-eyebrow">On-site service · Auckland</span>
+      <span class="mobile-promo-title">Mobile paint touch up and scratch repairs <em>Auckland</em></span>
+      <span class="mobile-promo-sub">Book on-site clear &amp; colour touch-ups and localised scratch repairs — larger resprays completed off site.</span>
+      <span class="mobile-promo-cta">View mobile paint service →</span>
+    </a>
+  </div>
+</section>
 <section id="instant-estimate" class="estimate-section">
 <div class="wrap">
 <div class="intro">
@@ -462,20 +472,6 @@ document.getElementById('calculateEstimate').addEventListener('click',calc);
 if(photo) photo.addEventListener('change',()=>{preview.innerHTML=''; [...photo.files].slice(0,5).forEach(f=>{if(f.type.startsWith('image/')){const img=document.createElement('img');img.src=URL.createObjectURL(f);preview.appendChild(img);}})});
 })();
 </script>
-
-<section class="mobile-promo-section">
-  <div class="wrap">
-    <a class="mobile-promo-card" href="mobile-paint.html">
-      <span class="mobile-promo-eyebrow">On-site service · Auckland</span>
-      <span class="mobile-promo-title">Mobile paint touch up and scratch repairs <em>Auckland</em></span>
-      <span class="mobile-promo-sub">Book on-site clear &amp; colour touch-ups and localised scratch repairs — larger resprays completed off site.</span>
-      <span class="mobile-promo-cta">View mobile paint service →</span>
-    </a>
-  </div>
-</section>
-
-
-
 <section>
   <div class="wrap">
     <div class="intro">

@@ -41,17 +41,17 @@ header{
   text-decoration:none;color:inherit;
 }
 .brand-logo{
-  width:min(280px,46vw);height:min(280px,46vw);
-  max-width:280px;max-height:280px;
-  border-radius:50%;
+  width:auto;height:auto;
+  max-height:110px;max-width:min(320px,58vw);
+  border-radius:0;
   object-fit:contain;
   object-position:center center;
-  border:3px solid rgba(255,90,54,.55);
-  box-shadow:0 0 0 5px rgba(255,90,54,.12),0 12px 32px rgba(0,0,0,.4);
-  background:#0a0a0a;
-  padding:10px;
+  border:none;
+  box-shadow:none;
+  background:transparent;
+  padding:0;
 }
-.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text{display:none}
 .brand-name{
   font-weight:950;letter-spacing:-.045em;font-size:clamp(1.6rem,4vw,3.1rem);
   text-transform:uppercase;
@@ -120,7 +120,7 @@ header{
 .mobile-panel a:hover{color:var(--accent)}
 
 @media(max-width:1100px){
-  .brand-logo{width:min(200px,40vw);height:min(200px,40vw);max-width:200px;max-height:200px;object-fit:contain;padding:8px}
+  .brand-logo{max-height:90px;max-width:min(260px,52vw)}
   .brand-name{font-size:2rem}
   .brand-tag{font-size:.72rem}
   :root{--header-h:160px}
@@ -128,7 +128,7 @@ header{
 @media(max-width:960px){
   .links, .nav-cta{display:none}
   .nav-toggle{display:inline-flex}
-  .brand-logo{width:min(120px,32vw);height:min(120px,32vw);max-width:120px;max-height:120px;object-fit:contain;padding:6px}
+  .brand-logo{max-height:72px;max-width:min(200px,48vw)}
   .brand-name{font-size:1.55rem}
   .brand-tag{font-size:.65rem}
   :root{--header-h:120px}
