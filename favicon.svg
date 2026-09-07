@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Auto Paint Lab">
+  <rect width="32" height="32" rx="7" fill="#0B1F3A"/>
+  <path fill="#E85A1A" d="M6.4 19.15 9.5 17.95l1.7-4.2A1.9 1.9 0 0 1 13 12.6h6.15a1.9 1.9 0 0 1 1.8 1.15l1.55 4.2 3.2 1.2c.58.22.9.8.9 1.42V22h-1.55a3.2 3.2 0 0 0-6.35 0h-5.3A3.2 3.2 0 0 0 7.05 22H5.5v-1.43c0-.62.33-1.2.9-1.42z"/>
+  <circle cx="10.9" cy="22" r="2.2" fill="#0B1F3A"/>
+  <circle cx="21.85" cy="22" r="2.2" fill="#0B1F3A"/>
+</svg>
