@@ -77,7 +77,7 @@ export type EstimateInput = {
   systemId: PaintSystemId;
   panelId: PanelId;
   pickup: boolean;
-  vehicleTier: number;
+  vehicleMake: string;
 };
 
 export type SystemQuote = {
@@ -87,10 +87,31 @@ export type SystemQuote = {
   isVehicleSystem: boolean;
 };
 
+
+const JAPANESE_MAKES = new Set([
+  "Toyota", "Nissan", "Mazda", "Mitsubishi", "Honda", "Subaru", "Suzuki", "Isuzu", "Lexus", "Infiniti", "Acura", "Daihatsu", "Hino", "Mitsubishi Fuso"
+]);
+
+const EUROPEAN_MAKES = new Set([
+  "Volkswagen", "Audi", "BMW", "Mercedes-Benz", "Mercedes", "Mini", "MINI", "Porsche", "Volvo", "Saab", "Peugeot", "Citroen", "Citroën", "Renault", "Fiat", "Alfa Romeo", "Jaguar", "Land Rover", "Bentley", "Rolls-Royce", "Skoda", "Škoda", "Seat", "SEAT", "Opel", "Vauxhall"
+]);
+
+/** Internal pricing adjustment selected from the vehicle make.
+ * The form shows only the make; pricing categories are intentionally not exposed to customers.
+ */
+export function vehicleMakeMultiplier(make: string) {
+  const key = make.trim();
+  if (JAPANESE_MAKES.has(key)) return 1;
+  if (EUROPEAN_MAKES.has(key)) return 1.25;
+  if (["Ford", "Holden", "Jeep", "Chevrolet", "GMC", "Ram", "Dodge", "Chrysler", "Cadillac", "Lincoln", "Tesla"].includes(key)) return 1.15;
+  return 1.08;
+}
+
 export type EstimateResult = {
   areaCm2: number;
   ratePerCm2: number;
   panelMultiplier: number;
+  vehicleMake: string;
   vehicleTier: number;
   pickup: number;
   low: number;
@@ -116,13 +137,14 @@ export function priceFor(
 export function buildEstimate(input: EstimateInput): EstimateResult {
   const panel = PANELS.find((p) => p.id === input.panelId) ?? PANELS[7];
   const area = Math.max(40, Math.min(20000, input.areaCm2));
+  const vehicleTier = vehicleMakeMultiplier(input.vehicleMake);
   const pickup = input.pickup ? PICKUP_NZD : 0;
   const quotes = PAINT_SYSTEMS.map((system) => {
     const labourAndMaterials = priceFor(
       area,
       system,
       panel.multiplier,
-      input.vehicleTier,
+      vehicleTier,
     );
     return {
       system,
@@ -139,7 +161,8 @@ export function buildEstimate(input: EstimateInput): EstimateResult {
     areaCm2: area,
     ratePerCm2: RATE_PER_CM2,
     panelMultiplier: panel.multiplier,
-    vehicleTier: input.vehicleTier,
+    vehicleMake: input.vehicleMake,
+    vehicleTier,
     pickup,
     low: Math.max(MIN_JOB_NZD, low),
     high: Math.max(high, low + 40),

@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { saveEstimate } from "@/lib/estimate-session";
 import {
+  BASE_AREA_CM2,
   BASE_PRICE_NZD,
   buildEstimate,
   formatNzd,
@@ -26,8 +27,7 @@ export function EstimateTool() {
   const [looking, setLooking] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [vehicle, setVehicle] = useState<VehicleRecord | null>(null);
-  const [damageCm, setDamageCm] = useState(25);
-  const area = Math.max(40, Math.round((damageCm * damageCm) * 0.65));
+  const [damageSizeCm, setDamageSizeCm] = useState(25);
   const [panelId, setPanelId] = useState<PanelId>("bumper");
   const [systemOverride, setSystemOverride] = useState<PaintSystemId | "">("");
   const [pickup, setPickup] = useState(false);
@@ -36,6 +36,7 @@ export function EstimateTool() {
   const [generated, setGenerated] = useState(false);
 
   const systemId: PaintSystemId = systemOverride || vehicle?.paintSystem || "solid";
+  const area = Math.max(40, Math.min(20000, damageSizeCm * damageSizeCm));
 
   const result = useMemo(() => {
     if (!vehicle) return null;
@@ -44,7 +45,7 @@ export function EstimateTool() {
       systemId,
       panelId,
       pickup,
-      vehicleTier: vehicle.vehicleTier,
+      vehicleMake: vehicle.make,
     });
   }, [vehicle, area, systemId, panelId, pickup]);
 
@@ -159,32 +160,46 @@ export function EstimateTool() {
           </div>
         ) : null}
 
+        <div className="space-y-2">
+          <Label htmlFor="vehicle-make">Vehicle make</Label>
+          <select
+            id="vehicle-make"
+            className="flex h-11 w-full border border-border bg-surface px-3 text-sm"
+            value={vehicle?.make ?? ""}
+            disabled
+            aria-describedby="vehicle-make-note"
+          >
+            <option value={vehicle?.make ?? ""}>{vehicle?.make ?? "Look up registration first"}</option>
+          </select>
+          <p id="vehicle-make-note" className="text-xs text-subtle">Vehicle make is used automatically for the estimate.</p>
+        </div>
+
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <div className="flex items-end justify-between">
-              <Label htmlFor="area">Repair size (cm)</Label>
-              <span className="font-display text-lg tabular-nums">{damageCm} cm</span>
+              <Label htmlFor="area">Damage size (cm)</Label>
+              <span className="font-display text-lg tabular-nums">{damageSizeCm} cm</span>
             </div>
             <input
               id="area"
               type="range"
               min={5}
-              max={100}
+              max={140}
               step={1}
-              value={damageCm}
-              onChange={(e) => setDamageCm(Number(e.target.value))}
+              value={damageSizeCm}
+              onChange={(e) => setDamageSizeCm(Number(e.target.value))}
               className="w-full accent-accent"
               suppressHydrationWarning
             />
             <p className="text-xs text-subtle">
-              Estimate uses the entered repair size in centimetres. Enter the approximate visible damage size, not the whole panel.
+              Estimate pricing scales from the selected damage size. Enter the approximate damaged size, not the whole panel.
             </p>
             <Input
               type="number"
               min={5}
-              max={100}
-              value={damageCm}
-              onChange={(e) => setDamageCm(Number(e.target.value) || 0)}
+              max={140}
+              value={damageSizeCm}
+              onChange={(e) => setDamageSizeCm(Number(e.target.value) || 0)}
             />
           </div>
           <div className="space-y-2">
@@ -308,7 +323,7 @@ export function EstimateTool() {
               </table>
             </div>
             <p className="mt-3 text-xs text-subtle">
-              Based on approximately {damageCm} cm of visible damage
+              Based on {result.areaCm2} cm² at {formatNzd(BASE_PRICE_NZD)} per {BASE_AREA_CM2} cm²
               for solid paint, then system, panel and vehicle-tier factors. Preliminary only — not a
               fixed quote. Confirmed after physical inspection.
             </p>

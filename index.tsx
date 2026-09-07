@@ -23,10 +23,6 @@ export const Route = createFileRoute("/")({
         content: "Professional paint repairs and resprays in Auckland. Instant rego estimate. Independent sole trader.",
       },
       { property: "og:image", content: "/og.jpg" },
-      { property: "og:url", content: "https://autopaintlab.co.nz/" },
-      { name: "twitter:title", content: "Auto Paint Lab | Auckland Car Spray Painting" },
-      { name: "twitter:description", content: "Independent car spray painting, paint repairs, bumper painting, colour matching and mobile paint in Auckland." },
-      { name: "twitter:image:alt", content: "Auto Paint Lab Auckland" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
@@ -160,12 +156,33 @@ function Home() {
           Rego in. Colour compared. Price out.
         </h2>
         <p className="mt-4 max-w-2xl text-muted">
-          Enter your NZ plate. Vehicle details are matched for accurate paint-system pricing.
-          Measure the damaged area, optionally attach a photo, then book.
+          Enter your NZ plate. Vehicle make is used for the estimate.
+          Measure the damaged size in cm, optionally attach a photo, then book.
         </p>
         <div className="mt-10">
           <EstimateTool />
         </div>
+      </section>
+
+      <section className="mx-auto w-full max-w-6xl px-4 py-10">
+        <a
+          href="https://mobilemech.co.nz/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block rounded-lg border border-border bg-surface px-5 py-4 transition hover:bg-elevated"
+          aria-label="Visit Mobile Mech, Auto Paint Lab's sister company for mobile mechanical repairs"
+        >
+          <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+            Sister company
+          </p>
+          <div className="mt-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+            <p className="font-display text-lg font-semibold">Mobile Mech — mobile mechanical repairs</p>
+            <span className="text-sm text-muted">mobilemech.co.nz →</span>
+          </div>
+          <p className="mt-1 text-sm text-muted">
+            Mobile mechanical servicing, repairs and diagnostics across Auckland.
+          </p>
+        </a>
       </section>
 
       <section className="bg-surface py-20">
@@ -258,10 +275,8 @@ function Home() {
             name: "Auto Paint Lab",
             description:
               "Independent car spray painting, paint repairs, bumper painting and mobile paint in Auckland.",
-            url: "https://autopaintlab.co.nz/",
+            url: "https://autopaintlab.nz",
             telephone: "+642041104094",
-            image: "https://autopaintlab.co.nz/og.jpg",
-            logo: "https://autopaintlab.co.nz/assets/images/logo-mark.png",
             areaServed: { "@type": "City", name: "Auckland" },
             address: {
               "@type": "PostalAddress",
