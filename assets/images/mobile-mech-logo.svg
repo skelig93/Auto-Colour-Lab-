@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 96" role="img" aria-labelledby="title desc">
+  <title id="title">Mobile Mech</title>
+  <desc id="desc">Mobile Mech — Simply car repairs</desc>
+  <g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke-width="9" d="M34 20a25 25 0 0 0 29 34l19 19 12-12-19-19A25 25 0 0 0 63 20l-11 11 12 12-8 8-12-12z"/>
+  </g>
+  <text x="105" y="50" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="800" letter-spacing="-1.5">Mobile Mech</text>
+  <text x="108" y="76" fill="#f59e0b" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="2.2">SIMPLY CAR REPAIRS</text>
+</svg>
