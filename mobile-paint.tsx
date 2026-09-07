@@ -26,9 +26,9 @@ function MobilePaintPage() {
       <section className="mx-auto w-full max-w-6xl px-4 py-10">
         <div className="mb-8 flex flex-wrap items-center gap-4">
           <img
-            src="/assets/images/logo-full.png"
+            src="/logo.jpg"
             alt="Auto Paint Lab Auckland logo"
-            className="h-16 w-auto rounded bg-white object-contain sm:h-20"
+            className="h-20 w-auto rounded bg-white object-contain sm:h-24"
           />
           <div>
             <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-accent">
