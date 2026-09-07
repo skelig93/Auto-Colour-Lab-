@@ -16,7 +16,7 @@
 :root{
   --bg:#070809;--card:#111417;--card2:#171b1f;--text:#f5f5f2;--muted:#aeb4ba;
   --line:#2a2f34;--accent:#ff5a36;--accent2:#ff9d46;--max:1180px;
-  --header-h:200px;
+  --header-h:auto;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -32,7 +32,7 @@ header{
   border-bottom:1px solid var(--line);
 }
 .nav{
-  min-height:var(--header-h);
+  min-height:auto;
   display:flex;align-items:center;justify-content:space-between;
   gap:16px;padding:12px 0;
 }
@@ -41,15 +41,17 @@ header{
   text-decoration:none;color:inherit;
 }
 .brand-logo{
-  width:360px;height:360px;border-radius:50%;
+  width:min(640px,58vw);height:min(640px,58vw);
+  max-width:640px;max-height:640px;
+  border-radius:50%;
   object-fit:cover;object-position:center 20%;
-  border:3px solid rgba(255,90,54,.5);
-  box-shadow:0 0 0 5px rgba(255,90,54,.12),0 12px 32px rgba(0,0,0,.4);
+  border:4px solid rgba(255,90,54,.55);
+  box-shadow:0 0 0 6px rgba(255,90,54,.12),0 14px 40px rgba(0,0,0,.45);
   background:#111;
 }
 .brand-text{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{
-  font-weight:950;letter-spacing:-.045em;font-size:2.85rem;
+  font-weight:950;letter-spacing:-.045em;font-size:clamp(1.6rem,4vw,3.1rem);
   text-transform:uppercase;
 }
 .brand-name b{color:var(--accent)}
@@ -116,18 +118,18 @@ header{
 .mobile-panel a:hover{color:var(--accent)}
 
 @media(max-width:1100px){
-  .brand-logo{width:200px;height:200px}
+  .brand-logo{width:min(220px,36vw);height:min(220px,36vw)}
   .brand-name{font-size:2rem}
   .brand-tag{font-size:.72rem}
-  :root{--header-h:140px}
+  :root{--header-h:160px}
 }
 @media(max-width:960px){
   .links, .nav-cta{display:none}
   .nav-toggle{display:inline-flex}
-  .brand-logo{width:140px;height:140px}
+  .brand-logo{width:min(120px,28vw);height:min(120px,28vw)}
   .brand-name{font-size:1.55rem}
   .brand-tag{font-size:.65rem}
-  :root{--header-h:110px}
+  :root{--header-h:120px}
 }
 
 /* ===== HERO with car background ===== */
@@ -281,6 +283,21 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
   .hero-in{padding:56px 0}
   .foot-cols{justify-content:flex-start}
 }
+
+.top-promo{
+  background:linear-gradient(90deg,#1a100e,#121416 40%,#1a100e);
+  border-bottom:1px solid rgba(255,90,54,.35);
+  text-align:center;
+}
+.top-promo a{
+  display:block;padding:14px 16px;
+  font-weight:850;font-size:clamp(.95rem,2.2vw,1.15rem);
+  letter-spacing:.02em;color:#fff;
+  transition:background .2s,color .2s;
+}
+.top-promo a:hover{background:rgba(255,90,54,.15);color:var(--accent2)}
+.top-promo a span{color:var(--accent);font-weight:900}
+
 </style>
 </head>
 <body>
@@ -288,7 +305,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Auto Paint Lab home">
-      <img class="brand-logo" src="assets/images/logo.jpg" alt="Auto Paint Lab logo" width="360" height="360">
+      <img class="brand-logo" src="assets/images/logo.jpg" alt="Auto Paint Lab logo" width="720" height="720">
       <span class="brand-text">
         <span class="brand-name">AUTO <b>PAINT LAB</b></span>
         <span class="brand-tag">Auckland paint specialists</span>
@@ -350,49 +367,49 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 <main><section class="page-hero"><div class="wrap"><div class="eyebrow">Services</div><h1>Automotive paint services in Auckland</h1><p>Each service has its own page and booking form.</p></div></section>
 <section><div class="wrap"><div class="grid grid-3">
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14c0-3 2-5 5-7 0 0 1 3 1 5"/><path d="M13 12c1.5-1 3-1.5 5-1"/><path d="M8 18h8"/><path d="M9 21h6"/><rect x="10" y="3" width="4" height="5" rx="1"/><path d="M12 8v2"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h4l2 3v2h-3l-2-2"/><path d="M15 9v8a2 2 0 01-2 2H9a2 2 0 01-2-2V9"/><path d="M7 12H4l-1 2v2h4"/><path d="M10 6V4"/><path d="M8 4h4"/></svg></div>
   <h3>Car spray painting</h3>
   <p>Professional automotive spray painting for damaged, faded or tired paintwork across Auckland.</p>
   <a class="more" href="spray-painting.html">Details &amp; book →</a>
 </article>
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21L14 4"/><path d="M8 21L19 4"/><path d="M5 16l3 3"/><path d="M14 5l2-2 3 3-2 2"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M7 16L17 8"/><path d="M9 17L15 11"/><path d="M6 12l4-4"/></svg></div>
   <h3>Scratch &amp; scuff repairs</h3>
   <p>Localised paint repairs for scratches and scuffs where repair is better than replacing a panel.</p>
   <a class="more" href="scratch-repairs.html">Details &amp; book →</a>
 </article>
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13c3-4 7-6 10-6s7 2 10 6"/><path d="M3 13h18v2.5a2.5 2.5 0 01-2.5 2.5h-13A2.5 2.5 0 013 15.5V13z"/><path d="M6 18v1.5M18 18v1.5"/><circle cx="7" cy="15.2" r=".8" fill="currentColor"/><circle cx="17" cy="15.2" r=".8" fill="currentColor"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12c2.5-3.5 6-5.5 9-5.5S18.5 8.5 21 12"/><path d="M3.5 12h17v2a2 2 0 01-2 2h-13a2 2 0 01-2-2v-2z"/><path d="M6 16v2M18 16v2"/><path d="M8 14h2M14 14h2"/></svg></div>
   <h3>Bumper painting</h3>
   <p>Plastic bumper preparation, refinishing and colour matching for a clean integrated finish.</p>
   <a class="more" href="bumper-painting.html">Details &amp; book →</a>
 </article>
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><path d="M9 9.5c-1.5.8-2.5 2.2-2.5 4"/><path d="M15 14.5c1.5-.8 2.5-2.2 2.5-4"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2"/></svg></div>
   <h3>Colour matching</h3>
   <p>Match and blend repaired areas into your existing paint — not factory-code only.</p>
   <a class="more" href="colour-matching.html">Details &amp; book →</a>
 </article>
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h13l3 4v2H3v-6z"/><path d="M5 11V8h7l3 3"/><circle cx="7.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/><path d="M14 7h2l1 2"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h12l4 4v3H3v-7z"/><path d="M5 10V7h8l3 3"/><circle cx="7.5" cy="17.5" r="1.75"/><circle cx="16.5" cy="17.5" r="1.75"/><path d="M15 8h2.5"/></svg></div>
   <h3>Mobile paint touch-ups</h3>
   <p>On-site clear and colour touch-ups at your home or work. Larger resprays off site.</p>
   <a class="more" href="mobile-paint.html">Details &amp; book →</a>
 </article>
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6h10l4 4v10H5V6z"/><path d="M5 10h14"/><path d="M11 6v4"/><path d="M8 14h5"/><path d="M8 17h3"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h8l4 5v11H7V4z"/><path d="M7 10h12"/><path d="M11 4v6"/><path d="M15 13v3"/><path d="M9 14h4"/></svg></div>
   <h3>Panel refinishing</h3>
   <p>Doors, guards, bonnets, boots and exterior panels prepared and refinished professionally.</p>
   <a class="more" href="panel-refinishing.html">Details &amp; book →</a>
 </article>
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17c1.5-5 4.5-9 8-9s6.5 4 8 9"/><path d="M3 17h18"/><path d="M6 20h12"/><path d="M12 4v4"/><path d="M9 6l3-3 3 3"/><path d="M8 12h2M14 12h2"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c1-4 3.5-7 5.5-7h5c2 0 4 1.5 5.5 4l2 3H3v-0z"/><circle cx="7" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/><path d="M8 5c1.5-1 3-1.5 4-1.5"/><path d="M11 3.5c1-.3 2.5-.3 4 .5"/><path d="M14 3c1.2.2 2.5.8 3.5 1.8"/></svg></div>
   <h3>Full vehicle resprays</h3>
   <p>Complete exterior resprays for restoration, sun fade and colour-change projects.</p>
   <a class="more" href="full-respray.html">Details &amp; book →</a>
 </article>
 <article class="card">
-  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h3.5L12 10h3l2 4h1"/><path d="M12 10V7l4-2"/><path d="M9.5 17l1.5-4"/></svg></div>
+  <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="16.5" r="2.75"/><circle cx="18" cy="16.5" r="2.75"/><path d="M6 16.5h4L12 9.5h3.5L18 14"/><path d="M12 9.5V7l3.5-2"/><path d="M9 12.5h3"/></svg></div>
   <h3>Motorbike resprays</h3>
   <p>Fairings, tanks and bike panels refinished with the same care as car paintwork.</p>
   <a class="more" href="motorbike-resprays.html">Details &amp; book →</a>
