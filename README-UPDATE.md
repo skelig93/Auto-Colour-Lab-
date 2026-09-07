@@ -1,18 +1,14 @@
-# Auto Paint Lab — vehicle make + Mobile Mech update
+# Auto Paint Lab — Mobile Mech card + logo sizing update
 
-Replace the matching files in the GitHub repository with these files.
+Drop these files into the repository root and replace matching files.
 
-## Changes
-- Estimate pricing selection is now **Vehicle make** rather than a pricing-level/category selector.
-- Pricing is calculated internally from vehicle make; the form does not disclose pricing categories.
-- Japanese makes use the lower internal multiplier; European makes use the higher internal multiplier.
-- Damage size is displayed simply in **cm**. The calculator uses the selected cm value as an approximate square damage dimension for the underlying area calculation.
-- Main page now has a small clickable **Mobile Mech** sister-company panel linking to `https://mobilemech.co.nz/` in a new tab.
-- Existing visual design and layout are otherwise preserved.
+Changes:
+- Main-page Mobile Mech sister-company card now includes a Mobile Mech wordmark/logo and a branded white-card treatment.
+- The card links to https://mobilemech.co.nz/ and opens in a new tab.
+- Auto Paint Lab header logo/name restored to the compact size used before the previous enlargement.
+- No other page layout or content is changed.
 
-## Files
-- `src/components/EstimateTool.tsx`
-- `src/lib/paint.ts`
-- `src/lib/vehicles.ts`
+Files:
 - `src/routes/index.tsx`
-- `index.html` (legacy/static main page)
+- `src/components/layout/SiteHeader.tsx`
+- `public/mobile-mech-logo.svg`

@@ -169,19 +169,28 @@ function Home() {
           href="https://mobilemech.co.nz/"
           target="_blank"
           rel="noopener noreferrer"
-          className="block rounded-lg border border-border bg-surface px-5 py-4 transition hover:bg-elevated"
+          className="group block overflow-hidden rounded-xl border border-[#d9dee5] bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
           aria-label="Visit Mobile Mech, Auto Paint Lab's sister company for mobile mechanical repairs"
         >
-          <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-            Sister company
-          </p>
-          <div className="mt-1 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
-            <p className="font-display text-lg font-semibold">Mobile Mech — mobile mechanical repairs</p>
-            <span className="text-sm text-muted">mobilemech.co.nz →</span>
+          <div className="flex items-center gap-4 px-5 py-4 sm:px-6 sm:py-5" style={{ fontFamily: 'Arial, Helvetica, sans-serif' }}>
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-[#111827] p-2.5 sm:h-16 sm:w-16">
+              <img
+                src="/mobile-mech-logo.svg"
+                alt="Mobile Mech"
+                className="h-full w-full object-contain"
+              />
+            </div>
+            <div className="min-w-0 flex-1">
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#6b7280]">Sister company</p>
+              <p className="mt-0.5 text-xl font-extrabold tracking-tight text-[#111827] sm:text-2xl">Mobile Mech</p>
+              <p className="text-sm font-medium text-[#4b5563]">Simply car repairs · Auckland</p>
+            </div>
+            <div className="hidden shrink-0 text-right sm:block">
+              <p className="text-sm font-bold text-[#111827]">Mobile mechanical repairs</p>
+              <p className="mt-1 text-xs font-medium text-[#6b7280]">mobilemech.co.nz ↗</p>
+            </div>
           </div>
-          <p className="mt-1 text-sm text-muted">
-            Mobile mechanical servicing, repairs and diagnostics across Auckland.
-          </p>
+          <div className="h-1 bg-[#f59e0b]" />
         </a>
       </section>
 
