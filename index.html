@@ -32,36 +32,17 @@ header{
   border-bottom:1px solid var(--line);
 }
 .nav{
-  min-height:auto;
+  min-height:76px;
   display:flex;align-items:center;justify-content:space-between;
   gap:16px;padding:12px 0;
 }
-.brand{
-  display:flex;align-items:center;gap:14px;flex-shrink:0;
-  text-decoration:none;color:inherit;
-}
-.brand-logo{
-  width:auto;height:auto;
-  max-height:110px;max-width:min(320px,58vw);
-  border-radius:0;
-  object-fit:contain;
-  object-position:center center;
-  border:none;
-  box-shadow:none;
-  background:transparent;
-  padding:0;
-}
-.brand-text{display:none}/* full logo includes wordmark */
+
+
+/* full logo includes wordmark */
 .brand-text-off{display:flex;flex-direction:column;line-height:1.05}
-.brand-name{
-  font-weight:950;letter-spacing:-.045em;font-size:clamp(1.6rem,4vw,3.1rem);
-  text-transform:uppercase;
-}
-.brand-name b{color:var(--accent)}
-.brand-tag{
-  font-size:.85rem;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--muted);margin-top:6px;
-}
+
+
+
 
 .links{
   display:flex;align-items:center;gap:4px;
@@ -121,16 +102,15 @@ header{
 .mobile-panel a:hover{color:var(--accent)}
 
 @media(max-width:1100px){
-  .brand-logo{max-height:90px;max-width:min(260px,50vw)
-  .brand-tag{font-size:.72rem}
+  
   :root{--header-h:160px}
 }
 @media(max-width:960px){
   .links, .nav-cta{display:none}
   .nav-toggle{display:inline-flex}
-  .brand-logo{max-height:72px;max-width:min(200px,48vw)}
-  .brand-name{font-size:1.55rem}
-  .brand-tag{font-size:.65rem}
+  
+  
+  
   :root{--header-h:120px}
 }
 
@@ -321,13 +301,72 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 }
 .mobile-promo-card:hover .mobile-promo-cta{color:var(--accent2)}
 
+
+
+
+
+
+
+
+@media(max-width:1100px){
+  
+  
+}
+@media(max-width:960px){
+  
+  
+  
+}
+@media(max-width:400px){
+  
+}
+
+
+/* Brand — mark + wordmark, dark-header friendly */
+.brand{
+  display:flex;align-items:center;gap:12px;flex-shrink:0;
+  text-decoration:none;color:inherit;min-width:0;
+}
+.brand-logo{
+  height:58px;width:auto;max-width:120px;
+  object-fit:contain;object-position:left center;
+  border:none;border-radius:0;box-shadow:none;
+  background:transparent;padding:0;display:block;flex-shrink:0;
+}
+.brand-text{
+  display:flex;flex-direction:column;justify-content:center;
+  line-height:1.08;gap:3px;min-width:0;
+}
+.brand-name{
+  font-weight:900;letter-spacing:-.035em;font-size:1.28rem;
+  text-transform:uppercase;color:#f3f4f2;white-space:nowrap;
+}
+.brand-name b{color:var(--accent);font-weight:900}
+.brand-tag{
+  font-size:.65rem;font-weight:700;letter-spacing:.13em;
+  text-transform:uppercase;color:#8b9399;white-space:nowrap;
+}
+@media(max-width:1100px){
+  .brand-logo{height:52px;max-width:100px}
+  .brand-name{font-size:1.15rem}
+}
+@media(max-width:960px){
+  .brand-logo{height:46px;max-width:88px}
+  .brand-name{font-size:1.05rem}
+  .brand-tag{font-size:.58rem;letter-spacing:.1em}
+}
+@media(max-width:380px){
+  .brand-tag{display:none}
+  .brand-name{font-size:.95rem}
+}
+
 </style>
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Auto Paint Lab home">
-      <img class="brand-logo" src="assets/images/logo.jpg" alt="Auto Paint Lab logo" width="320" height="270">
+      <img class="brand-logo" src="assets/images/logo-mark.png" alt="" width="120" height="58">
       <span class="brand-text">
         <span class="brand-name">AUTO <b>PAINT LAB</b></span>
         <span class="brand-tag">Auckland paint specialists</span>
