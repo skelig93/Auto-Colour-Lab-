@@ -41,13 +41,15 @@ header{
   text-decoration:none;color:inherit;
 }
 .brand-logo{
-  width:min(640px,58vw);height:min(640px,58vw);
-  max-width:640px;max-height:640px;
+  width:min(280px,46vw);height:min(280px,46vw);
+  max-width:280px;max-height:280px;
   border-radius:50%;
-  object-fit:cover;object-position:center 20%;
-  border:4px solid rgba(255,90,54,.55);
-  box-shadow:0 0 0 6px rgba(255,90,54,.12),0 14px 40px rgba(0,0,0,.45);
-  background:#111;
+  object-fit:contain;
+  object-position:center center;
+  border:3px solid rgba(255,90,54,.55);
+  box-shadow:0 0 0 5px rgba(255,90,54,.12),0 12px 32px rgba(0,0,0,.4);
+  background:#0a0a0a;
+  padding:10px;
 }
 .brand-text{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{
@@ -118,7 +120,7 @@ header{
 .mobile-panel a:hover{color:var(--accent)}
 
 @media(max-width:1100px){
-  .brand-logo{width:min(220px,36vw);height:min(220px,36vw)}
+  .brand-logo{width:min(200px,40vw);height:min(200px,40vw);max-width:200px;max-height:200px;padding:8px
   .brand-name{font-size:2rem}
   .brand-tag{font-size:.72rem}
   :root{--header-h:160px}
@@ -126,7 +128,7 @@ header{
 @media(max-width:960px){
   .links, .nav-cta{display:none}
   .nav-toggle{display:inline-flex}
-  .brand-logo{width:min(120px,28vw);height:min(120px,28vw)}
+  .brand-logo{width:min(120px,32vw);height:min(120px,32vw);max-width:120px;max-height:120px;object-fit:contain;padding:6px}
   .brand-name{font-size:1.55rem}
   .brand-tag{font-size:.65rem}
   :root{--header-h:120px}
@@ -284,29 +286,44 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
   .foot-cols{justify-content:flex-start}
 }
 
-.top-promo{
-  background:linear-gradient(90deg,#1a100e,#121416 40%,#1a100e);
-  border-bottom:1px solid rgba(255,90,54,.35);
-  text-align:center;
+
+
+
+
+
+
+.mobile-promo-section{padding:28px 0 8px;background:#0b0c0e}
+.mobile-promo-card{
+  display:block;padding:28px 28px 30px;border-radius:14px;
+  background:linear-gradient(125deg,#1c1210 0%,#141618 45%,#1a1410 100%);
+  border:1px solid rgba(255,90,54,.4);
+  box-shadow:0 18px 50px rgba(0,0,0,.35);
+  transition:transform .2s,border-color .2s,box-shadow .2s;
 }
-.top-promo a{
-  display:block;padding:14px 16px;
-  font-weight:850;font-size:clamp(.95rem,2.2vw,1.15rem);
-  letter-spacing:.02em;color:#fff;
-  transition:background .2s,color .2s;
+.mobile-promo-card:hover{
+  transform:translateY(-3px);border-color:rgba(255,90,54,.65);
+  box-shadow:0 22px 55px rgba(255,90,54,.12);
 }
-.top-promo a:hover{background:rgba(255,90,54,.15);color:var(--accent2)}
-.top-promo a span{color:var(--accent);font-weight:900}
+.mobile-promo-eyebrow{
+  display:block;font-size:.78rem;font-weight:900;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent2);margin-bottom:12px;
+}
+.mobile-promo-title{
+  display:block;font-size:clamp(1.45rem,4.2vw,2.35rem);font-weight:950;
+  letter-spacing:-.03em;line-height:1.15;color:#fff;margin-bottom:12px;
+}
+.mobile-promo-title em{font-style:normal;color:var(--accent)}
+.mobile-promo-sub{
+  display:block;color:#b8bec3;font-size:1.02rem;max-width:720px;margin-bottom:18px;line-height:1.5;
+}
+.mobile-promo-cta{
+  display:inline-flex;font-weight:900;font-size:1.05rem;color:var(--accent);
+}
+.mobile-promo-card:hover .mobile-promo-cta{color:var(--accent2)}
 
 </style>
 </head>
 <body>
-
-<div class="top-promo">
-  <a href="mobile-paint.html">Mobile paint touch up and scratch repairs <span>Auckland</span> →</a>
-</div>
-
-
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Auto Paint Lab home">
@@ -445,6 +462,18 @@ document.getElementById('calculateEstimate').addEventListener('click',calc);
 if(photo) photo.addEventListener('change',()=>{preview.innerHTML=''; [...photo.files].slice(0,5).forEach(f=>{if(f.type.startsWith('image/')){const img=document.createElement('img');img.src=URL.createObjectURL(f);preview.appendChild(img);}})});
 })();
 </script>
+
+<section class="mobile-promo-section">
+  <div class="wrap">
+    <a class="mobile-promo-card" href="mobile-paint.html">
+      <span class="mobile-promo-eyebrow">On-site service · Auckland</span>
+      <span class="mobile-promo-title">Mobile paint touch up and scratch repairs <em>Auckland</em></span>
+      <span class="mobile-promo-sub">Book on-site clear &amp; colour touch-ups and localised scratch repairs — larger resprays completed off site.</span>
+      <span class="mobile-promo-cta">View mobile paint service →</span>
+    </a>
+  </div>
+</section>
+
 
 
 <section>
