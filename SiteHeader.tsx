@@ -25,12 +25,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex h-[96px] w-full max-w-6xl items-center justify-between px-4">
-        <Link to="/" className="flex items-center gap-2.5 sm:gap-3" onClick={() => setOpen(false)}>
+      <div className="mx-auto flex min-h-[104px] w-full max-w-6xl items-center justify-between px-4 py-2 sm:min-h-[112px]">
+        <Link to="/" className="flex items-center gap-3 sm:gap-4" onClick={() => setOpen(false)}>
           <img
-            src="/logo.jpg"
+            src="/assets/images/logo-mark.png"
             alt="Auto Paint Lab Auckland"
-            className="h-11 w-auto rounded bg-white object-contain sm:h-12"
+            className="h-[88px] w-auto object-contain sm:h-[96px]"
           />
           <span className="hidden font-display text-base font-bold tracking-[0.04em] sm:inline sm:text-lg">
             AUTO <span className="text-accent">PAINT</span> LAB

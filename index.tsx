@@ -23,6 +23,10 @@ export const Route = createFileRoute("/")({
         content: "Professional paint repairs and resprays in Auckland. Instant rego estimate. Independent sole trader.",
       },
       { property: "og:image", content: "/og.jpg" },
+      { property: "og:url", content: "https://autopaintlab.co.nz/" },
+      { name: "twitter:title", content: "Auto Paint Lab | Auckland Car Spray Painting" },
+      { name: "twitter:description", content: "Independent car spray painting, paint repairs, bumper painting, colour matching and mobile paint in Auckland." },
+      { name: "twitter:image:alt", content: "Auto Paint Lab Auckland" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
@@ -254,8 +258,10 @@ function Home() {
             name: "Auto Paint Lab",
             description:
               "Independent car spray painting, paint repairs, bumper painting and mobile paint in Auckland.",
-            url: "https://autopaintlab.nz",
+            url: "https://autopaintlab.co.nz/",
             telephone: "+642041104094",
+            image: "https://autopaintlab.co.nz/og.jpg",
+            logo: "https://autopaintlab.co.nz/assets/images/logo-mark.png",
             areaServed: { "@type": "City", name: "Auckland" },
             address: {
               "@type": "PostalAddress",

@@ -6,7 +6,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { saveEstimate } from "@/lib/estimate-session";
 import {
-  BASE_AREA_CM2,
   BASE_PRICE_NZD,
   buildEstimate,
   formatNzd,
@@ -27,7 +26,8 @@ export function EstimateTool() {
   const [looking, setLooking] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [vehicle, setVehicle] = useState<VehicleRecord | null>(null);
-  const [area, setArea] = useState(632);
+  const [damageCm, setDamageCm] = useState(25);
+  const area = Math.max(40, Math.round((damageCm * damageCm) * 0.65));
   const [panelId, setPanelId] = useState<PanelId>("bumper");
   const [systemOverride, setSystemOverride] = useState<PaintSystemId | "">("");
   const [pickup, setPickup] = useState(false);
@@ -162,30 +162,29 @@ export function EstimateTool() {
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2 sm:col-span-2">
             <div className="flex items-end justify-between">
-              <Label htmlFor="area">Repair area (cm²)</Label>
-              <span className="font-display text-lg tabular-nums">{area} cm²</span>
+              <Label htmlFor="area">Repair size (cm)</Label>
+              <span className="font-display text-lg tabular-nums">{damageCm} cm</span>
             </div>
             <input
               id="area"
               type="range"
-              min={80}
-              max={8000}
-              step={4}
-              value={area}
-              onChange={(e) => setArea(Number(e.target.value))}
+              min={5}
+              max={100}
+              step={1}
+              value={damageCm}
+              onChange={(e) => setDamageCm(Number(e.target.value))}
               className="w-full accent-accent"
               suppressHydrationWarning
             />
             <p className="text-xs text-subtle">
-              Rate: {BASE_AREA_CM2} cm² = {formatNzd(BASE_PRICE_NZD)} base solid paint. Enter the
-              damaged area, not the whole panel.
+              Estimate uses the entered repair size in centimetres. Enter the approximate visible damage size, not the whole panel.
             </p>
             <Input
               type="number"
-              min={40}
-              max={20000}
-              value={area}
-              onChange={(e) => setArea(Number(e.target.value) || 0)}
+              min={5}
+              max={100}
+              value={damageCm}
+              onChange={(e) => setDamageCm(Number(e.target.value) || 0)}
             />
           </div>
           <div className="space-y-2">
@@ -309,7 +308,7 @@ export function EstimateTool() {
               </table>
             </div>
             <p className="mt-3 text-xs text-subtle">
-              Based on {result.areaCm2} cm² at {formatNzd(BASE_PRICE_NZD)} per {BASE_AREA_CM2} cm²
+              Based on approximately {damageCm} cm of visible damage
               for solid paint, then system, panel and vehicle-tier factors. Preliminary only — not a
               fixed quote. Confirmed after physical inspection.
             </p>

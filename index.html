@@ -5,13 +5,17 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Car Spray Painting Auckland | Independent Paint Repairs & Resprays | Auto Paint Lab</title>
 <meta name="description" content="Independent sole-trader auto paint lab in Auckland. Car spray painting, paint repairs, scratch & scuff repair, bumper painting and colour matching. Free quote online.">
-<meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Auto Paint Lab">
 <meta name="theme-color" content="#08090a">
 <link rel="canonical" href="https://autopaintlab.co.nz/">
 <meta property="og:title" content="Car Spray Painting Auckland | Independent Paint Repairs & Resprays | Auto Paint Lab">
 <meta property="og:description" content="Independent sole-trader auto paint lab in Auckland. Car spray painting, paint repairs, scratch & scuff repair, bumper painting and colour matching. Free quote online.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://autopaintlab.co.nz/">
 <meta property="og:site_name" content="Auto Paint Lab">
+<meta property="og:image" content="https://autopaintlab.co.nz/og.jpg">
+<meta property="og:image:alt" content="Auto Paint Lab Auckland">
 <style>
 :root{
   --bg:#070809;--card:#111417;--card2:#171b1f;--text:#f5f5f2;--muted:#aeb4ba;
@@ -32,7 +36,7 @@ header{
   border-bottom:1px solid var(--line);
 }
 .nav{
-  min-height:94px;
+  min-height:76px;
   display:flex;align-items:center;justify-content:space-between;
   gap:16px;padding:12px 0;
 }
@@ -328,7 +332,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
   text-decoration:none;color:inherit;min-width:0;
 }
 .brand-logo{
-  height:92px;width:auto;max-width:190px;
+  height:116px;width:auto;max-width:240px;
   object-fit:contain;object-position:left center;
   border:none;border-radius:0;box-shadow:none;
   background:transparent;padding:0;display:block;flex-shrink:0;
@@ -347,11 +351,11 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
   text-transform:uppercase;color:#8b9399;white-space:nowrap;
 }
 @media(max-width:1100px){
-  .brand-logo{height:84px;max-width:174px}
+  .brand-logo{height:104px;max-width:216px}
   .brand-name{font-size:1.15rem}
 }
 @media(max-width:960px){
-  .brand-logo{height:72px;max-width:148px}
+  .brand-logo{height:92px;max-width:176px}
   .brand-name{font-size:1.05rem}
   .brand-tag{font-size:.58rem;letter-spacing:.1em}
 }
@@ -361,12 +365,16 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 }
 
 </style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Car Spray Painting Auckland | Independent Paint Repairs & Resprays | Auto Paint Lab">
+<meta name="twitter:description" content="Independent sole-trader auto paint lab in Auckland. Car spray painting, paint repairs, scratch & scuff repair, bumper painting and colour matching. Free quote online.">
+<meta name="twitter:image" content="https://autopaintlab.co.nz/og.jpg">
 </head>
 <body>
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Auto Paint Lab home">
-      <img class="brand-logo" src="assets/images/logo-mark.png" alt="" width="190" height="92">
+      <img class="brand-logo" src="assets/images/logo-mark.png" alt="Auto Paint Lab Auckland logo" width="240" height="116">
       <span class="brand-text">
         <span class="brand-name">AUTO <b>PAINT LAB</b></span>
         <span class="brand-tag">Auckland paint specialists</span>
@@ -476,12 +484,15 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
   <option value="1.30">Premium European — Mercedes, Volkswagen, BMW &amp; similar</option>
 </select>
 </label>
-<label>Approximate damage area (cm²)
-<div style="display:grid;gap:10px">
-  <input id="damageSize" type="number" min="40" max="20000" step="4" value="632" inputmode="numeric" aria-label="Approximate damage area in square centimetres">
-  <input id="damageSizeRange" type="range" min="40" max="20000" step="4" value="632" aria-label="Approximate damage area slider">
-  <span style="font-size:.78rem;color:var(--muted)">Enter the visible damaged area in square centimetres (cm²).</span>
-</div>
+<label>Approximate damage size (cm)
+<select id="damageSize">
+  <option value="10">Up to 10 cm</option>
+  <option value="20">Up to 20 cm</option>
+  <option value="30">Up to 30 cm</option>
+  <option value="40">Up to 40 cm</option>
+  <option value="50">Up to 50 cm</option>
+  <option value="60">Up to 60 cm</option>
+</select>
 </label>
 <label>Upload damage photo <input id="estimatePhoto" type="file" accept="image/*" multiple></label>
 <div id="photoPreview" class="photo-preview" aria-live="polite"></div>
@@ -501,10 +512,9 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 </section>
 <script>
 (function(){
-const tier=document.getElementById('vehicleTier'), size=document.getElementById('damageSize'), sizeRange=document.getElementById('damageSizeRange'), pickup=document.getElementById('pickup'), result=document.getElementById('resultPrice'), text=document.getElementById('resultText'), photo=document.getElementById('estimatePhoto'), preview=document.getElementById('photoPreview');
-function baseForArea(areaCm2){ const area=Math.max(40,Math.min(20000,areaCm2)); if(area<=632)return 300; if(area<=1264)return 400; let price=400; let blocks=Math.ceil((area-1264)/1264); let increment=300; for(let i=0;i<blocks;i++){price+=increment; increment*=0.75;} return price; }
-if(size&&sizeRange){ size.addEventListener('input',()=>{sizeRange.value=size.value;}); sizeRange.addEventListener('input',()=>{size.value=sizeRange.value;}); }
-function calc(){const n=Math.max(40,Number(size.value)||40), mult=Number(tier.value), pickupCost=pickup.checked?80:0; let base=baseForArea(n); let low=Math.round((base*mult+pickupCost)/10)*10; let high=Math.round((base*mult*1.2+pickupCost)/10)*10; result.textContent='$'+low.toLocaleString()+' – $'+high.toLocaleString(); text.textContent=(pickup.checked?'Includes the $80 vehicle pickup. ':'')+'Based on approximately '+n.toLocaleString()+' cm² of visible damage. This is a preliminary estimate only.';}
+const tier=document.getElementById('vehicleTier'), size=document.getElementById('damageSize'), pickup=document.getElementById('pickup'), result=document.getElementById('resultPrice'), text=document.getElementById('resultText'), photo=document.getElementById('estimatePhoto'), preview=document.getElementById('photoPreview');
+function baseForCm(n){ if(n<=10)return 300; if(n<=20)return 400; if(n<=30)return 700; if(n<=40)return 925; if(n<=50)return 1150; return 1400; }
+function calc(){const n=Number(size.value), mult=Number(tier.value), pickupCost=pickup.checked?80:0; let base=baseForCm(n); let low=Math.round((base*mult+pickupCost)/10)*10; let high=Math.round((base*mult*1.2+pickupCost)/10)*10; result.textContent='$'+low.toLocaleString()+' – $'+high.toLocaleString(); text.textContent=(pickup.checked?'Includes the $80 vehicle pickup. ':'')+'Based on approximately '+n+' cm of visible damage. This is a preliminary estimate only.';}
 document.getElementById('calculateEstimate').addEventListener('click',calc);
 if(photo) photo.addEventListener('change',()=>{preview.innerHTML=''; [...photo.files].slice(0,5).forEach(f=>{if(f.type.startsWith('image/')){const img=document.createElement('img');img.src=URL.createObjectURL(f);preview.appendChild(img);}})});
 })();
