@@ -28,9 +28,9 @@ export function SiteHeader() {
       <div className="mx-auto flex h-[72px] w-full max-w-6xl items-center justify-between px-4">
         <Link to="/" className="flex items-center gap-2.5 sm:gap-3" onClick={() => setOpen(false)}>
           <img
-            src="/logo.jpg"
+            src="/assets/images/logo-mark.png"
             alt="Auto Paint Lab Auckland"
-            className="h-11 w-auto rounded bg-white object-contain sm:h-12"
+            className="h-16 w-auto object-contain sm:h-20"
           />
           <span className="hidden font-display text-base font-bold tracking-[0.04em] sm:inline sm:text-lg">
             AUTO <span className="text-accent">PAINT</span> LAB

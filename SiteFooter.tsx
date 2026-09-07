@@ -6,9 +6,9 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-6xl gap-10 px-4 py-14 md:grid-cols-3">
         <div>
           <img
-            src="/logo.jpg"
+            src="/assets/images/logo-full.png"
             alt="Auto Paint Lab Auckland"
-            className="mb-4 h-14 w-auto rounded bg-white object-contain p-1"
+            className="mb-4 h-28 w-auto object-contain"
           />
           <p className="max-w-sm text-sm text-silver">
             Independent automotive spray painting, paint repairs and resprays across Auckland.
