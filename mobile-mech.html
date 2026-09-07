@@ -16,7 +16,7 @@
 :root{
   --bg:#070809;--card:#111417;--card2:#171b1f;--text:#f5f5f2;--muted:#aeb4ba;
   --line:#2a2f34;--accent:#ff5a36;--accent2:#ff9d46;--max:1180px;
-  --header-h:120px;
+  --header-h:200px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -41,7 +41,7 @@ header{
   text-decoration:none;color:inherit;
 }
 .brand-logo{
-  width:180px;height:180px;border-radius:50%;
+  width:360px;height:360px;border-radius:50%;
   object-fit:cover;object-position:center 20%;
   border:3px solid rgba(255,90,54,.5);
   box-shadow:0 0 0 5px rgba(255,90,54,.12),0 12px 32px rgba(0,0,0,.4);
@@ -49,7 +49,7 @@ header{
 }
 .brand-text{display:flex;flex-direction:column;line-height:1.05}
 .brand-name{
-  font-weight:950;letter-spacing:-.045em;font-size:2.35rem;
+  font-weight:950;letter-spacing:-.045em;font-size:2.85rem;
   text-transform:uppercase;
 }
 .brand-name b{color:var(--accent)}
@@ -116,18 +116,18 @@ header{
 .mobile-panel a:hover{color:var(--accent)}
 
 @media(max-width:1100px){
-  .brand-logo{width:120px;height:120px}
-  .brand-name{font-size:1.7rem}
+  .brand-logo{width:200px;height:200px}
+  .brand-name{font-size:2rem}
   .brand-tag{font-size:.72rem}
-  :root{--header-h:100px}
+  :root{--header-h:140px}
 }
 @media(max-width:960px){
   .links, .nav-cta{display:none}
   .nav-toggle{display:inline-flex}
-  .brand-logo{width:88px;height:88px}
-  .brand-name{font-size:1.35rem}
+  .brand-logo{width:140px;height:140px}
+  .brand-name{font-size:1.55rem}
   .brand-tag{font-size:.65rem}
-  :root{--header-h:88px}
+  :root{--header-h:110px}
 }
 
 /* ===== HERO with car background ===== */
@@ -267,7 +267,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 .page-hero h1{font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.05em;margin:12px 0;line-height:1.02}
 .page-hero p{color:var(--muted);max-width:640px;font-size:1.05rem}
 .content-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:28px;margin:18px 0}
-.content-card h2{margin:0 0 12px;font-size:1.35rem}
+.content-card h2{margin:0 0 12px;font-size:1.55rem}
 .content-card p,.content-card li{color:#c7ccd0}
 .content-card ul{padding-left:22px}
 .service-cta{
@@ -288,7 +288,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 <header>
   <div class="wrap nav">
     <a class="brand" href="index.html" aria-label="Auto Paint Lab home">
-      <img class="brand-logo" src="assets/images/logo.jpg" alt="Auto Paint Lab logo" width="180" height="180">
+      <img class="brand-logo" src="assets/images/logo.jpg" alt="Auto Paint Lab logo" width="360" height="360">
       <span class="brand-text">
         <span class="brand-name">AUTO <b>PAINT LAB</b></span>
         <span class="brand-tag">Auckland paint specialists</span>
