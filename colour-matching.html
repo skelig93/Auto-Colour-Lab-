@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Mobile Mech Partner | Auto Paint Lab Auckland</title>
-<meta name="description" content="Auto Paint Lab partner page for Mobile Mech Auckland — mechanical services and paint work together.">
+<title>Colour Matching Auckland | Auto Paint Lab</title>
+<meta name="description" content="Automotive colour matching in Auckland. Blend repaired areas into the existing finish rather than relying only on a factory paint code.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#08090a">
-<link rel="canonical" href="https://autopaintlab.co.nz/mobile-mech.html">
-<meta property="og:title" content="Mobile Mech Partner | Auto Paint Lab Auckland">
-<meta property="og:description" content="Auto Paint Lab partner page for Mobile Mech Auckland — mechanical services and paint work together.">
+<link rel="canonical" href="https://autopaintlab.co.nz/colour-matching.html">
+<meta property="og:title" content="Colour Matching Auckland | Auto Paint Lab">
+<meta property="og:description" content="Automotive colour matching in Auckland. Blend repaired areas into the existing finish rather than relying only on a factory paint code.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Auto Paint Lab">
 <style>
@@ -300,28 +300,100 @@ footer{border-top:1px solid var(--line);padding:50px 0 0;background:#090a0b}
 <main>
   <section class="page-hero">
     <div class="wrap">
-      <div class="eyebrow">Partner</div>
-      <h1>Mobile Mech Auckland</h1>
-      <p>Auto Paint Lab works alongside Mobile Mech for customers who need both mechanical repairs and paint work across Auckland.</p>
+      <div class="eyebrow">Auto Paint Lab · Auckland</div>
+      <h1>Colour matching</h1>
+      <p>Match and blend repaired areas into the existing finish rather than relying only on a factory paint code.</p>
       <div class="actions" style="margin-top:22px">
-        <a class="btn primary" href="https://www.mobilemech.co.nz/" target="_blank" rel="noopener">Visit mobilemech.co.nz</a>
-        <a class="btn secondary" href="booking.html">Paint quote</a>
+        <a class="btn primary" href="#book">Book this service</a>
+        <a class="btn secondary" href="services.html">All services</a>
       </div>
     </div>
   </section>
   <section>
     <div class="wrap" style="max-width:900px">
       <div class="content-card">
-        <h2>Paint + mechanical</h2>
-        <p>After a scrape or minor accident you may need panel/paint work and a mechanical check. Mobile Mech provides mobile mechanic services across Auckland; Auto Paint Lab handles the refinishing side.</p>
-        <ul>
-          <li>Mobile mechanic services: <a href="https://www.mobilemech.co.nz/" style="color:var(--accent)" target="_blank" rel="noopener">mobilemech.co.nz</a></li>
-          <li>Paint, spray and respray: this site — <a href="booking.html" style="color:var(--accent)">book a paint quote</a></li>
-        </ul>
+        
+<p>Factory codes are a starting point. Real-world paint fades and varies, so colour is checked against your vehicle for a better blend on repairs and partial resprays.</p>
+<ul>
+<li>Colour assessment on the vehicle</li>
+<li>Blending into surrounding panels where needed</li>
+<li>Support for partial repairs and larger refinishing jobs</li>
+</ul>
+
       </div>
-      <p style="text-align:center;margin-top:28px">
-        <img src="assets/photos/mobile-mech-van-side.jpg" alt="Mobile Mech van" style="max-width:560px;margin:0 auto;border-radius:12px;border:1px solid var(--line)">
-      </p>
+      <div class="service-cta">
+        <div>
+          <strong style="font-size:1.1rem">Ready to book colour matching?</strong>
+          <p style="margin:6px 0 0;color:var(--muted);font-size:.92rem">Send photos and details — Anthony will follow up with a tailored quote.</p>
+        </div>
+        <a class="btn primary" href="#book">Open booking form</a>
+      </div>
+    </div>
+  </section>
+  <section id="book" class="dark">
+    <div class="wrap form-wrap">
+      <div class="eyebrow">Quote request</div>
+      <h2 style="margin:0 0 8px;font-size:1.8rem">Book colour matching</h2>
+      <p style="color:var(--muted);margin:0 0 20px">Form submits securely via FormSubmit to the workshop email. Include photos for a faster assessment.</p>
+      
+<form class="form" id="quoteForm" action="https://formsubmit.co/nzmobilemech@gmail.com" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_subject" value="New Auto Paint Lab Quote Request — Colour matching">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="https://autopaintlab.co.nz/booking.html?sent=1">
+  <div class="row">
+    <div><label for="name">Name *</label><input id="name" name="name" required autocomplete="name"></div>
+    <div><label for="phone">Phone *</label><input id="phone" name="phone" required autocomplete="tel"></div>
+  </div>
+  <label for="email">Email *</label>
+  <input id="email" type="email" name="email" required autocomplete="email">
+  <div class="row">
+    <div><label for="vehicle">Vehicle *</label><input id="vehicle" name="vehicle" placeholder="e.g. 2019 Toyota Corolla" required></div>
+    <div>
+      <label for="service">What do you need?</label>
+      <select id="service" name="service"><option>Paint repair</option><option>Scratch / scuff repair</option><option>Bumper painting</option><option>Panel refinishing</option><option selected>Colour matching</option><option>Full respray</option><option>Mobile paint touch-up</option><option>Motorbike respray</option><option>Not sure — please assess</option></select>
+    </div>
+  </div>
+  <label for="damage">Describe the damage / what you want done</label>
+  <textarea id="damage" name="damage" placeholder="Tell us what happened, what you want changed, and anything else that matters."></textarea>
+  <label for="files">Upload photos or video of the damage</label>
+  <div class="upload">
+    <input id="files" type="file" name="attachment" accept="image/*,video/*" multiple>
+    <div class="hint">You can select multiple images or a short video. Keep files reasonably sized for email upload.</div>
+    <div class="preview" id="preview"></div>
+  </div>
+  <p class="caption">Quotes are customised to your requirements. A job is not confirmed until Anthony contacts you.</p>
+  <button class="btn primary" type="submit">Send quote request</button>
+  <div class="status" id="status"></div>
+</form>
+<script>
+(function(){
+  var input=document.getElementById('files'), prev=document.getElementById('preview'), form=document.getElementById('quoteForm'), status=document.getElementById('status');
+  if(input&&prev){
+    input.addEventListener('change',function(){
+      prev.innerHTML='';
+      Array.from(input.files||[]).slice(0,8).forEach(function(f){
+        if(!f.type.startsWith('image/')) return;
+        var img=document.createElement('img');
+        img.src=URL.createObjectURL(f);
+        img.alt=f.name;
+        prev.appendChild(img);
+      });
+    });
+  }
+  if(form){
+    form.addEventListener('submit',function(){
+      if(status) status.textContent='Sending… please wait.';
+    });
+  }
+  var params=new URLSearchParams(location.search);
+  if(params.get('sent')==='1' && status){
+    status.textContent='Thanks — your request was sent. Anthony will be in touch shortly.';
+    status.style.color='#6ddf8c';
+  }
+})();
+</script>
+
     </div>
   </section>
 </main>

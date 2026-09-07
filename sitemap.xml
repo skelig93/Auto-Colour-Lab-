@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://autopaintlab.nz/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://autopaintlab.nz/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://autopaintlab.nz/service/car-spray-painting</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://autopaintlab.nz/service/scratch-scuff-repairs</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://autopaintlab.nz/service/bumper-painting</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://autopaintlab.nz/service/colour-matching</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://autopaintlab.nz/service/mobile-paint</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://autopaintlab.nz/service/panel-refinishing</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://autopaintlab.nz/service/full-vehicle-resprays</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://autopaintlab.nz/mobile-paint</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://autopaintlab.nz/motorbike</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://autopaintlab.nz/booking</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://autopaintlab.nz/contact</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://autopaintlab.nz/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://autopaintlab.nz/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://autopaintlab.co.nz/</loc></url>
+  <url><loc>https://autopaintlab.co.nz/services.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/booking.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/spray-painting.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/scratch-repairs.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/bumper-painting.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/colour-matching.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/panel-refinishing.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/full-respray.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/mobile-paint.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/motorbike-resprays.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/terms.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/blog.html</loc></url>
+  <url><loc>https://autopaintlab.co.nz/mobile-mech.html</loc></url>
 </urlset>
