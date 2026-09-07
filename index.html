@@ -97,19 +97,45 @@ a.logo img{flex-shrink:0;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,
 /* Van photo */
 .van-photo{box-shadow:0 12px 40px rgba(0,0,0,0.4);border:1px solid var(--line)}
 img[src*="van.jpg"]{width:100%;max-width:680px;border-radius:12px;margin:1.25rem 0;display:block;object-fit:cover}
+
+/* VERY LARGE logo + brand name */
+a.logo{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  font-size:2.6rem;
+  font-weight:800;
+  letter-spacing:-0.03em;
+  line-height:1;
+}
+a.logo .logo-text{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+a.logo .logo-text b{
+  color:var(--accent);
+  font-weight:800;
+  font-size:1.05em;
+}
+a.logo img{
+  flex-shrink:0;
+  object-fit:contain;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+}
+
+/* Keep header usable on smaller screens */
+@media (max-width:900px){
+  a.logo{font-size:1.5rem;gap:10px}
+  a.logo img{height:90px !important;max-height:18vw}
+}
+@media (max-width:600px){
+  a.logo{font-size:1.25rem}
+  a.logo img{height:70px !important}
+}
 </style><meta content="Auto Paint Lab" property="og:site_name"/></head><body>
-<header><div class="wrap nav"><a class="logo" href="/"><img alt="Auto Paint Lab Auckland" height="64" src="assets/images/logo.jpg" style="height:64px;width:auto;display:block;border-radius:6px;" width="64"/><span class="logo-text">Auto <b>Paint Lab</b></span></a><nav class="links"><a href="/">Home</a><div class="dropdown"><button class="dropbtn" type="button">Services ▾</button><div class="dropdown-content"><a href="/services.html">All Services</a><a href="/mobile-paint.html">Mobile Paint</a><a href="/motorbike-resprays.html">Motorbike Resprays</a><a href="/mobile-mech.html">Mobile Mech</a></div></div><a href="#instant-estimate">Instant Estimate</a><a href="/blog.html">Blog</a><a href="/booking.html">Get a Quote</a></nav><a aria-label="Book an Auto Paint Lab quote" class="btn primary float-pulse" href="/booking.html">Book / Quote</a></div></header>
+<header><div class="wrap nav"><a class="logo" href="/"><img alt="Auto Paint Lab Auckland" height="180" src="assets/images/logo.jpg" style="height:180px;width:auto;display:block;border-radius:10px;max-height:22vw;" width="180"/><span class="logo-text">Auto <b>Paint Lab</b></span></a><nav class="links"><a href="/">Home</a><div class="dropdown"><button class="dropbtn" type="button">Services ▾</button><div class="dropdown-content"><a href="/services.html">All Services</a><a href="/mobile-paint.html">Mobile Paint</a><a href="/motorbike-resprays.html">Motorbike Resprays</a><a href="/mobile-mech.html">Mobile Mech</a></div></div><a href="#instant-estimate">Instant Estimate</a><a href="/blog.html">Blog</a><a href="/booking.html">Get a Quote</a></nav><a aria-label="Book an Auto Paint Lab quote" class="btn primary float-pulse" href="/booking.html">Book / Quote</a></div></header>
 <main><section class="hero" style="background-image:linear-gradient(rgba(7,8,9,0.45), rgba(7,8,9,0.65)), url('assets/images/hero-car.jpg'); background-size:cover; background-position:center 35%; background-repeat:no-repeat;"><div class="wrap hero-in"><div class="eyebrow">Independent Auto Paint Specialist · Auckland</div><h1>Simplify<br/><span>Auto painting</span></h1><p>Auckland’s independent auto paint lab for car spray painting, scratch &amp; scuff repairs, bumper painting, accurate colour matching and full resprays. Careful preparation, durable finishes and personal service from a sole trader who takes pride in the work.</p><div class="actions"><a aria-label="Get an instant preliminary paint estimate" class="btn primary" href="#instant-estimate">Get Instant Estimate</a><a aria-label="Request a free automotive paint quote" class="btn secondary" href="/booking.html">Free Quote Available</a><a class="btn secondary" href="tel:+642041104094">Call Anthony</a></div></div></section>
-<section class="van-section" style="padding:48px 0 20px;background:#0c0d0e">
-<div class="wrap">
-<div class="intro" style="margin-bottom:24px"><div class="eyebrow">Mobile paint support</div><h2 style="color:#fff">Our mobile paint support vehicle.</h2>
-<p style="color:#aeb4b8;max-width:640px">This is the Auto Paint Lab mobile paint support vehicle — set up to bring tools, materials and on-site paint support where needed. It is not used to transport customer vehicles.</p></div>
-<div style="border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)">
-<img alt="Auto Paint Lab mobile paint support van" height="844" loading="lazy" src="assets/images/van.jpg" style="display:block;width:100%;height:auto;max-height:380px;object-fit:cover;object-position:center 55%" width="1500"/>
-</div>
-<p style="color:#8b9398;font-size:14px;margin:16px 0 0">Equipped for mobile paint support work across Auckland. Vehicle pickup options, where offered, are arranged separately after quote confirmation.</p>
-</div>
-</section>
 <section class="estimate-section" id="instant-estimate">
 <div class="wrap">
 <div class="intro"><div class="eyebrow">Instant Preliminary Estimate</div><h2>Get an estimate on the spot.</h2><p>Upload a photo, tell us roughly how large the damaged area is and select your vehicle type. Our pricing calculator gives you an immediate preliminary estimate — no waiting for a quote to be written.</p></div>
@@ -126,13 +152,23 @@ img[src*="van.jpg"]{width:100%;max-width:680px;border-radius:12px;margin:1.25rem
 <div class="estimate-result" id="estimateResult"><div class="result-label">YOUR PRELIMINARY ESTIMATE</div><div class="result-price" id="resultPrice">—</div><p id="resultText">Select the vehicle type and approximate damage size to see your estimated price.</p><a class="btn secondary" href="/booking.html">Continue to Booking</a></div>
 </div>
 <div class="estimate-note"><strong>Important:</strong> This is an automated preliminary estimate, not a fixed quote. Final pricing can change after physical inspection if there is hidden damage, additional preparation, panel work, blending or other work not visible in the submitted photo.</div>
-</div></div></section>
+</div></div></section><section class="van-section" style="padding:48px 0 20px;background:#0c0d0e">
+<div class="wrap">
+<div class="intro" style="margin-bottom:24px"><div class="eyebrow">Mobile paint support</div><h2 style="color:#fff">Our mobile paint support vehicle.</h2>
+<p style="color:#aeb4b8;max-width:640px">This is the Auto Paint Lab mobile paint support vehicle — set up to bring tools, materials and on-site paint support where needed. It is not used to transport customer vehicles.</p></div>
+<div style="border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35)">
+<img alt="Auto Paint Lab mobile paint support van" height="844" loading="lazy" src="assets/images/van.jpg" style="display:block;width:100%;height:auto;max-height:380px;object-fit:cover;object-position:center 55%" width="1500"/>
+</div>
+<p style="color:#8b9398;font-size:14px;margin:16px 0 0">Equipped for mobile paint support work across Auckland. Vehicle pickup options, where offered, are arranged separately after quote confirmation.</p>
+</div>
+</section>
+
 <section class="moto-banner moto-focal"><div class="wrap moto-banner-box"><div class="moto-copy"><div class="eyebrow">Motorcycle Paint &amp; Resprays · Auckland</div><div class="moto-kicker">🏍️ MOTORCYCLE-ONLY PAINT SERVICE</div><h2>Motorbike Resprays &amp; Restorations <span>Done On Site.</span></h2><p>Our dedicated motorcycle paint service lets us carry out <strong>motorcycle resprays and paint restorations on site at Auto Paint Lab</strong>. We prepare and refinish tanks, fairings, plastics and other painted motorcycle parts using professional paint systems — with <strong>free motorcycle pickup included in the paint price</strong>.</p><div class="onsite-badge onsite-main">🏍️ <strong>WE CAN DO MOTORCYCLE PAINT RESPRAYS &amp; RESTORES ON SITE.</strong></div><div class="home-moto-note"><strong>🏠 MINOR MOTORCYCLE RESPRAYS CAN BE DONE AT YOUR HOME.</strong><span class="small">This on-the-spot service is for minor scratches, scuffs and quick resprays only. Major, deep or extensive damage requires workshop preparation and painting.</span></div><p class="moto-subline">No months-long workshop wait. Our target is to have the bike back in the <strong>same week</strong> for the agreed scope of work.</p><div class="actions"><a class="btn primary" href="/motorbike-resprays.html">Explore Motorcycle Resprays →</a><a class="btn secondary" href="/booking.html?service=Motorbike%20Respray">Get a Motorbike Quote</a></div></div><div class="moto-points"><div><strong>ON-SITE MOTORCYCLE PAINTING</strong><span>Resprays and restorations carried out at Auto Paint Lab</span></div><div><strong>$400 FUEL TANK RESPRAY</strong><span>Standard single-colour tank pricing</span></div><div><strong>FREE PICKUP</strong><span>Included in the motorcycle paint price</span></div><div><strong>MECHANICAL SUPPORT</strong><span>Servicing available while the bike is being painted</span></div></div></div></section>
 <section class="pickup-hero"><div class="wrap pickup-box"><div><div class="eyebrow">Vehicle Collection</div><h2>We Can Pick Up the Car.</h2><p>Don't worry about getting the vehicle to the shop. If you choose pickup, Auto Paint Lab can arrange to collect the vehicle and bring it in for the paintwork. <strong>Pickup is $80.</strong></p></div><a class="btn primary pickup-btn" href="/booking.html?pickup=yes">🚗 Arrange Vehicle Pickup — $80</a></div></section>
 <section class="partner"><div class="wrap partner-box"><div><span class="partner-tag">Our Automotive Partner</span><h2>We are partnered with Mobile Mech.</h2><p>Auto Paint Lab works alongside <strong>Mobile Mech</strong>, Auckland's mobile mechanic service. If your vehicle needs mechanical diagnosis, servicing, repairs, auto electrical work or other automotive support alongside its paintwork, we can connect you with the Mobile Mech team.</p><a class="freequote" href="/mobile-mech.html">Explore Mobile Mech services →</a></div><a class="btn secondary" href="https://www.mobilemech.co.nz/">Visit Mobile Mech</a></div></section>
-<section class="strip"><div class="wrap stripgrid"><div class="stat"><strong>Colour Matching</strong><small>Accurate vehicle matching</small></div><div class="stat"><strong>Panel Refinishing</strong><small>From single panels upward</small></div><div class="stat"><strong>Full Resprays</strong><small>Complete vehicle projects</small></div><div class="stat"><strong>Auckland</strong><small>Central &amp; wider Auckland</small></div></div></section>
+
 <section><div class="wrap"><div class="intro"><div class="eyebrow">Why Use Auto Paint Lab</div><h2>Personal service, fair pricing, professional standards.</h2><p>As a sole trader I keep overheads lean and communication direct. You deal with the person responsible for the work — clearer explanations, competitive pricing and careful quality control on every job. From the first photo to the finished repair, the process is designed to make cost and next steps easy to understand.</p></div><div class="feature-row"><div class="feature"><div class="icon">📷</div><h3>Send photos first</h3><p>Upload damage photos before committing to a workshop visit.</p></div><div class="feature"><div class="icon">💰</div><h3>Instant estimate</h3><p>Use the online estimator for a fast preliminary price range.</p></div><div class="feature"><div class="icon">🚗</div><h3>Pickup available</h3><p>Choose vehicle pickup for an additional $80 when booking.</p></div></div></div></section>
-<section class="dark"><div class="wrap"><div class="intro"><div class="eyebrow">Simple Process</div><h2>From damage to booking.</h2><p>Give me the information needed and choose the repair path that suits you.</p></div><div class="process"><div class="step"><b>01</b><h3>Upload</h3><p>Send photos or a video of the damaged area.</p></div><div class="step"><b>02</b><h3>Estimate</h3><p>Use the instant estimator for a preliminary range.</p></div><div class="step"><b>03</b><h3>Book</h3><p>Tell us what you need and request a free quote.</p></div><div class="step"><b>04</b><h3>Repair</h3><p>I assess the vehicle and carry out the agreed work.</p></div></div></div></section>
+
 <section class="dark"><div class="wrap"><div class="intro"><div class="eyebrow">What We Do</div><h2>Automotive paint, without the guesswork.</h2><p>From a scratched bumper to a complete respray, the focus is on preparation, colour match and finish. Smaller clear coat and colour coat touch-ups and scratch repairs can be done on site; larger resprays are completed off site.</p></div><div class="grid"><article class="card"><div class="num">01</div><h3>Car Spray Painting</h3><p>Professional automotive spray painting for damaged, faded or tired paintwork.</p><a href="/services.html#spray">Explore spray painting →</a></article><article class="card"><div class="num">02</div><h3>Scratch &amp; Scuff Repairs</h3><p>Repair and refinish damaged paint where the right repair is more appropriate than replacing a panel.</p><a href="/services.html#repairs">Paint repairs →</a></article><article class="card"><div class="num">03</div><h3>Bumper Painting</h3><p>Plastic bumper preparation, refinishing and colour matching for a clean integrated finish.</p><a href="/services.html#bumper">Bumper painting →</a></article><article class="card"><div class="num">04</div><h3>Colour Matching</h3><p>Match and blend repaired areas into the existing finish rather than relying only on a factory paint code.</p><a href="/services.html#colour">Colour matching →</a></article><article class="card"><div class="num">05</div><h3>Mobile Paint Touch-Ups</h3><p>On-site clear coat and colour coat touch-ups, scratch and accident repairs wherever the car is. Larger resprays are done off site.</p><a href="/mobile-paint.html">Mobile paint details →</a></article><article class="card"><div class="num">05</div><h3>Panel Refinishing</h3><p>Doors, guards, bonnets, boots and other exterior panels prepared and refinished professionally.</p><a href="/services.html#panels">Panel refinishing →</a></article><article class="card"><div class="num">06</div><h3>Full Vehicle Resprays</h3><p>Complete exterior resprays for restoration, faded paintwork and colour-change projects.</p><a href="/services.html#respray">Full resprays →</a></article></div></div></section>
 <section><div class="wrap split"><div aria-label="Abstract automotive paint artwork" class="paint-art"></div><div><div class="eyebrow">The Finish Starts Before The Spray Gun</div><div class="intro"><h2>Preparation is what makes paint last.</h2><p>A quality automotive finish depends on the work underneath it. We assess the damage, prepare the surface correctly, match the colour and refine the finish.</p></div><ul class="check"><li>Surface preparation and repair assessment</li><li>Automotive colour matching and blending</li><li>Basecoat and clearcoat refinishing</li><li>Bumper and plastic trim refinishing</li><li>Single-panel and full-vehicle projects</li></ul><a class="btn primary" href="#instant-estimate">Get an Estimate</a></div></div></section>
 <section class="dark" id="areas"><div class="wrap"><div class="intro"><div class="eyebrow">Local Automotive Paint Specialists</div><h2>Serving Auckland.</h2><p>Auto Paint Lab is built around Auckland customers looking for specialist vehicle paint and refinishing services.</p></div><div class="areas"><span class="area">Ellerslie</span><span class="area">Penrose</span><span class="area">Mount Wellington</span><span class="area">Onehunga</span><span class="area">Remuera</span><span class="area">Mount Eden</span><span class="area">Newmarket</span><span class="area">Panmure</span><span class="area">Glen Innes</span><span class="area">East Auckland</span><span class="area">Manukau</span><span class="area">East Tāmaki</span><span class="area">Henderson</span><span class="area">West Auckland</span><span class="area">Albany</span><span class="area">North Shore</span></div></div></section>
