@@ -25,12 +25,16 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex min-h-[180px] w-full max-w-6xl items-center justify-between px-4 py-5 sm:min-h-[200px] sm:py-6">
-        <Link to="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)}>
+      <div className="mx-auto flex min-h-[220px] w-full max-w-6xl items-center justify-between px-4 py-6 sm:min-h-[235px] sm:px-6 sm:py-7">
+        <Link
+          to="/"
+          className="flex min-w-0 shrink-0 items-center"
+          onClick={() => setOpen(false)}
+        >
           <img
             src="/assets/images/auto-paint-lab-logo-clean.webp"
             alt="Auto Paint Lab Auckland"
-            className="h-36 w-auto max-w-[72vw] object-contain sm:h-44 lg:h-48"
+            className="block h-auto w-[280px] max-w-[72vw] object-contain sm:w-[340px] lg:w-[360px]"
           />
         </Link>
 
@@ -74,8 +78,11 @@ export function SiteHeader() {
           </div>
         </nav>
 
-        <div className="flex items-center gap-2">
-          <a href="tel:+642041104094" className="hidden items-center gap-2 text-sm text-muted md:flex">
+        <div className="flex shrink-0 items-center gap-2">
+          <a
+            href="tel:+642041104094"
+            className="hidden items-center gap-2 text-sm text-muted md:flex"
+          >
             <Phone className="size-4 text-accent" />
             020 411 04094
           </a>
