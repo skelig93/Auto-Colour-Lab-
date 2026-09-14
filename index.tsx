@@ -6,16 +6,16 @@ export const Route = createFileRoute("/")({
   component: Home,
   head: () => ({
     meta: [
-      { title: "Auto Paint Lab | Auckland Car Spray Painting & Paint Repairs" },
+      { title: "Car Spray Painting Auckland | Paint Repairs & Resprays | Auto Paint Lab" },
       {
         name: "description",
         content:
-          "Independent car spray painting, scratch repairs, bumper painting and mobile paint in Auckland. Instant estimate from your NZ rego. Professional colour matching and panel refinishing.",
+          "Auto Paint Lab provides car spray painting, scratch and paint repairs, bumper painting, colour matching, panel refinishing and full resprays across Auckland. Get a free quote or instant preliminary estimate.",
       },
       {
         name: "keywords",
         content:
-          "car spray painting Auckland, paint repair Auckland, bumper painting, mobile car paint, colour matching, respray Auckland, Auto Paint Lab, automotive refinishing NZ",
+          "car spray painting Auckland, car paint repairs Auckland, spray painter Auckland, car respray Auckland, bumper painting Auckland, scratch repair Auckland, colour matching Auckland, panel refinishing Auckland",
       },
       { property: "og:title", content: "Auto Paint Lab | Auckland Car Spray Painting" },
       {
@@ -280,11 +280,11 @@ function Home() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "AutomotiveBusiness",
+            "@type": "Organization",
             name: "Auto Paint Lab",
             description:
               "Independent car spray painting, paint repairs, bumper painting and mobile paint in Auckland.",
-            url: "https://autopaintlab.nz",
+            url: "https://autopaintlab.co.nz",
             telephone: "+642041104094",
             areaServed: { "@type": "City", name: "Auckland" },
             address: {

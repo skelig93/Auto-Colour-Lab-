@@ -10,16 +10,16 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Auto Paint Lab | Auckland Car Spray Painting & Paint Repairs" },
+      { title: "Car Spray Painting Auckland | Paint Repairs | Auto Paint Lab" },
       {
         name: "description",
         content:
-          "Professional car spray painting, paint repairs, bumper painting, colour matching and mobile paint in Auckland. Instant estimate from your NZ rego. Independent sole trader.",
+          "Car spray painting, scratch and paint repairs, bumper painting, colour matching, panel refinishing and full resprays across Auckland. Free quote and instant preliminary estimate.",
       },
       {
         name: "keywords",
         content:
-          "car spray painting Auckland, paint repair Auckland, bumper painting Auckland, mobile car painting, colour matching, vehicle respray Auckland, automotive paint NZ, Auto Paint Lab",
+          "car spray painting Auckland, car paint repairs Auckland, spray painter Auckland, car respray Auckland, bumper painting Auckland, scratch repair Auckland, colour matching Auckland, panel refinishing Auckland",
       },
       { name: "theme-color", content: "#0B1F3A" },
       { name: "robots", content: "index, follow, max-image-preview:large" },
@@ -29,18 +29,18 @@ export const Route = createRootRoute({
       { property: "og:locale", content: "en_NZ" },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://autopaintlab.co.nz/" },
-      { property: "og:title", content: "Auto Paint Lab | Auckland Car Spray Painting & Paint Repairs" },
+      { property: "og:title", content: "Car Spray Painting Auckland | Paint Repairs & Resprays | Auto Paint Lab" },
       {
         property: "og:description",
         content:
-          "Professional car spray painting, paint repairs and mobile paint in Auckland. Instant rego estimate. Independent sole trader.",
+          "Professional car spray painting, paint repairs and vehicle resprays across Auckland. Get a free quote or instant preliminary estimate.",
       },
       { property: "og:image", content: "/og.jpg" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Auto Paint Lab | Auckland Car Spray Painting" },
       {
         name: "twitter:description",
-        content: "Professional paint repairs and resprays in Auckland. Instant estimate from your rego.",
+        content: "Professional car paint repairs and resprays across Auckland. Get a free quote or instant preliminary estimate.",
       },
       { name: "twitter:image", content: "/og.jpg" },
       { name: "twitter:url", content: "https://autopaintlab.co.nz/" },
