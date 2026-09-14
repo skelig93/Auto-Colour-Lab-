@@ -1,7 +1,7 @@
 export const BASE_AREA_CM2 = 632;
-export const BASE_PRICE_NZD = 300;
+export const BASE_PRICE_NZD = 150;
 export const RATE_PER_CM2 = BASE_PRICE_NZD / BASE_AREA_CM2;
-export const MIN_JOB_NZD = 220;
+export const MIN_JOB_NZD = 110;
 export const PICKUP_NZD = 80;
 
 export type PaintSystemId =

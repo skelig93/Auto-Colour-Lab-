@@ -12,7 +12,7 @@ export function SiteFooter() {
           />
           <p className="max-w-sm text-sm text-silver">
             Independent automotive spray painting, paint repairs and resprays across Auckland.
-            Owner / operator — sole trader.
+            Owner / operator — Anthony.
           </p>
         </div>
         <div>
@@ -37,7 +37,7 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-silver">
-        © 2026 Auto Paint Lab · Independent sole trader · Auckland
+        © 2026 Auto Paint Lab · Auckland
       </div>
     </footer>
   );

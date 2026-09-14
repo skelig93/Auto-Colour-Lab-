@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Car Spray Painting Auckland | Paint Repairs & Resprays | Auto Paint Lab</title>
-<meta name="description" content="Independent car spray painting and paint repairs across Auckland — scratch and scuff fixes, bumper painting, colour matching, panel refinishing and full resprays. Free quote and on-page estimate.">
+<title>Car Spray Painting Auckland | Bumper Painting, Scratch Repair & Resprays | Auto Paint Lab</title>
+<meta name="description" content="Auckland car spray painting specialists. Bumper painting, scratch & scuff repairs, colour matching, panel refinishing and full vehicle resprays. Instant online estimate tool. Mobile paint service available.">
 <meta name="keywords" content="car spray painting Auckland, paint repairs Auckland, spray painter Auckland, car respray Auckland, bumper painting, scratch repair, colour matching, panel refinishing">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="author" content="Auto Paint Lab">
 <meta name="theme-color" content="#08090a">
 <link rel="canonical" href="https://autopaintlab.co.nz/">
 <meta property="og:title" content="Car Spray Painting Auckland | Paint Repairs & Resprays | Auto Paint Lab">
-<meta property="og:description" content="Professional car spray painting and paint repairs across Auckland. Scratch repairs, bumper painting, colour matching, panel work and full resprays from an independent sole trader.">
+<meta property="og:description" content="Auckland car spray painting specialists. Expert bumper painting, scratch & scuff repairs, colour matching, panel refinishing and full vehicle resprays. Instant online estimate. Mobile paint available.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://autopaintlab.co.nz/">
 <meta property="og:site_name" content="Auto Paint Lab">
@@ -370,7 +370,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 </style>
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Car Spray Painting Auckland | Paint Repairs & Resprays | Auto Paint Lab">
-<meta name="twitter:description" content="Professional car spray painting and paint repairs across Auckland. Scratch repairs, bumper painting, colour matching, panel work and full resprays from an independent sole trader.">
+<meta name="twitter:description" content="Auckland car spray painting specialists. Expert bumper painting, scratch & scuff repairs, colour matching, panel refinishing and full vehicle resprays. Instant online estimate. Mobile paint available.">
 <meta name="twitter:image" content="https://autopaintlab.co.nz/og.jpg">
 <meta property="og:locale" content="en_NZ">
 <script type="application/ld+json">
@@ -489,11 +489,11 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
 </section>
 <section class="sister-company-section">
   <div class="wrap">
-    <a class="mobile-promo-card" href="https://mobilemech.co.nz/" target="_blank" rel="noopener noreferrer">
+    <a class="mobile-promo-card" href="https://mobilemech.co.nz/" target="_blank" rel="noopener noreferrer" title="Mobile Mech Auckland — mobile car servicing, repairs & diagnostics">
       <span class="mobile-promo-eyebrow">Sister company · Auckland</span>
-      <span class="mobile-promo-title">Mobile Mech <em>mobile mechanical repairs</em></span>
-      <span class="mobile-promo-sub">A separate sister company for mobile servicing, repairs and diagnostics at your home or workplace.</span>
-      <span class="mobile-promo-cta">Visit mobilemech.co.nz →</span>
+      <span class="mobile-promo-title">Mobile Mech — mobile car servicing &amp; repairs Auckland</span>
+      <span class="mobile-promo-sub">Mobile mechanical repairs, servicing, diagnostics and auto electrical at your home or workplace across Auckland. Sister company to Auto Paint Lab.</span>
+      <span class="mobile-promo-cta">Visit Mobile Mech Auckland → mobilemech.co.nz</span>
     </a>
   </div>
 </section>
@@ -563,7 +563,7 @@ footer{border-top:1px solid var(--line);padding:36px 0 0;background:#090a0b}
   <a class="btn secondary" href="booking.html">Continue to booking</a>
 </div>
 </div>
-<div class="estimate-note"><strong>Important:</strong> This is an automated preliminary estimate, not a fixed quote. Final pricing can change after inspection if there is hidden damage, extra preparation, panel work or blending not visible in the photo.</div>
+<div class="estimate-note"><strong>Important — estimate only:</strong> The figure shown is an automated guide based on the size and vehicle make you entered. It is <em>not</em> a fixed quote. Final pricing is confirmed after inspection and can change if there is hidden damage, extra preparation, panel work, or colour blending not visible in photos.</div>
 </div>
 </div>
 </section>
@@ -573,7 +573,7 @@ const make=document.getElementById('vehicleMake'), size=document.getElementById(
 const japanese=['Toyota','Nissan','Mazda','Mitsubishi','Honda','Subaru','Suzuki','Isuzu','Lexus','Infiniti','Acura','Daihatsu','Hino','Mitsubishi Fuso'];
 const european=['Volkswagen','Audi','BMW','Mercedes-Benz','Mercedes','Mini','Porsche','Volvo','Saab','Peugeot','Citroen','Citroën','Renault','Fiat','Alfa Romeo','Jaguar','Land Rover','Bentley','Rolls-Royce','Skoda','Škoda','Seat','SEAT','Opel','Vauxhall'];
 function makeMultiplier(name){if(japanese.includes(name))return 1;if(european.includes(name))return 1.25;if(['Ford','Holden','Jeep','Chevrolet','GMC','Ram','Dodge','Chrysler','Cadillac','Lincoln','Tesla'].includes(name))return 1.15;return 1.08;}
-function calc(){const cm=Number(size.value), mult=makeMultiplier(make.value), pickupCost=pickup.checked?80:0; const area=Math.max(40,cm*cm); const base=Math.max(220,area*(300/632)); let low=Math.round((base*mult+pickupCost)/10)*10; let high=Math.round((base*mult*1.2+pickupCost)/10)*10; result.textContent='$'+low.toLocaleString()+' – $'+high.toLocaleString(); text.textContent=(pickup.checked?'Includes the $80 vehicle pickup. ':'')+'Based on an approximate damage size of '+cm+' cm. This is a preliminary estimate only.';}
+function calc(){const cm=Number(size.value), mult=makeMultiplier(make.value), pickupCost=pickup.checked?80:0; const area=Math.max(40,cm*cm); const base=Math.max(110,area*(150/632)); let low=Math.round((base*mult+pickupCost)/10)*10; let high=Math.round((base*mult*1.2+pickupCost)/10)*10; result.textContent='$'+low.toLocaleString()+' – $'+high.toLocaleString(); text.textContent=(pickup.checked?'Includes the $80 vehicle pickup. ':'')+'Based on an approximate damage size of '+cm+' cm. This is an automated estimate only — not a fixed quote. Final price is confirmed after we inspect the vehicle.';}
 document.getElementById('calculateEstimate').addEventListener('click',calc);
 if(photo) photo.addEventListener('change',()=>{preview.innerHTML=''; [...photo.files].slice(0,5).forEach(f=>{if(f.type.startsWith('image/')){const img=document.createElement('img');img.src=URL.createObjectURL(f);preview.appendChild(img);}})});
 })();
@@ -673,7 +673,7 @@ if(photo) photo.addEventListener('change',()=>{preview.innerHTML=''; [...photo.f
   <div class="wrap foot">
     <div class="foot-brand">
       <div class="logo">AUTO <b>PAINT LAB</b></div>
-      <p>Automotive spray painting, paint repairs and vehicle resprays across Auckland. Independent sole trader — Anthony.</p>
+      <p>Automotive spray painting, paint repairs and vehicle resprays across Auckland. Owner/operator Anthony.</p>
       <a href="tel:+642041104094" style="color:var(--text);font-weight:800">020 411 04094</a>
     </div>
     <div class="foot-cols">
@@ -702,7 +702,7 @@ if(photo) photo.addEventListener('change',()=>{preview.innerHTML=''; [...photo.f
     </div>
   </div>
   <div class="wrap copy">
-    <span>© 2026 Auto Paint Lab · Independent sole trader · Auckland</span>
+    <span>© 2026 Auto Paint Lab · Auckland</span>
     <span>Owner / Operator Anthony · 020 411 04094</span>
   </div>
 </footer>

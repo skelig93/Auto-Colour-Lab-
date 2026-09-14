@@ -324,8 +324,11 @@ export function EstimateTool() {
             </div>
             <p className="mt-3 text-xs text-subtle">
               Based on {result.areaCm2} cm² at {formatNzd(BASE_PRICE_NZD)} per {BASE_AREA_CM2} cm²
-              for solid paint, then system, panel and vehicle-tier factors. Preliminary only — not a
-              fixed quote. Confirmed after physical inspection.
+              for solid paint, then system, panel and vehicle-tier factors.
+              <strong className="block mt-1 text-fg">Important — estimate only:</strong>
+              This is an automated guide, <em>not</em> a fixed quote. Final price is confirmed after we
+              inspect the vehicle and can change if there is hidden damage, extra preparation, panel
+              work or colour blending not visible in photos.
             </p>
             {generated ? (
               <div className="mt-6 space-y-3">
