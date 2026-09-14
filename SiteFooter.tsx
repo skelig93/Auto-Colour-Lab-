@@ -31,6 +31,7 @@ export function SiteFooter() {
             <Link to="/booking">Get a quote</Link>
             <Link to="/contact">Contact us</Link>
             <a href="tel:+642041104094">020 411 04094</a>
+            <a href="mailto:autopaintlabnz@gmail.com">autopaintlabnz@gmail.com</a>
             <span>Auckland, New Zealand</span>
             <Link to="/terms">Terms & conditions</Link>
           </div>
