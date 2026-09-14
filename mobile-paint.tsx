@@ -28,7 +28,7 @@ function MobilePaintPage() {
           <img
             src="/assets/images/auto-paint-lab-logo-clean.webp"
             alt="Auto Paint Lab Auckland logo"
-            className="h-32 w-auto object-contain sm:h-40"
+            className="h-40 w-auto object-contain sm:h-52"
           />
           <div>
             <p className="font-display text-sm font-semibold uppercase tracking-[0.2em] text-accent">
