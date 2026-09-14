@@ -25,12 +25,12 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex min-h-[200px] w-full max-w-6xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex min-h-[140px] w-full max-w-6xl items-center justify-between px-4 py-4">
         <Link to="/" className="flex items-center gap-2.5 sm:gap-3" onClick={() => setOpen(false)}>
           <img
             src="/assets/images/auto-paint-lab-logo-clean.webp"
             alt="Auto Paint Lab Auckland"
-            className="h-[10.5rem] w-auto object-contain sm:h-[12rem]"
+            className="h-28 w-auto object-contain sm:h-32"
           />
         </Link>
         <nav className="hidden items-center gap-5 lg:flex">
