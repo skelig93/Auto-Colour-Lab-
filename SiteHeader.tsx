@@ -25,7 +25,7 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex min-h-[260px] w-full max-w-6xl items-center justify-between px-4 py-7 sm:min-h-[280px] sm:px-6 sm:py-8">
+      <div className="mx-auto flex min-h-[420px] w-full max-w-6xl items-center justify-between px-4 py-8 sm:min-h-[460px] sm:px-6 sm:py-10">
         <Link
           to="/"
           className="flex min-w-0 shrink-0 items-center"
@@ -34,7 +34,7 @@ export function SiteHeader() {
           <img
             src="/assets/images/auto-paint-lab-logo-clean.webp"
             alt="Auto Paint Lab Auckland"
-            className="block h-auto w-[360px] max-w-[78vw] object-contain sm:w-[440px] lg:w-[500px]"
+            className="block h-auto w-[720px] max-w-[90vw] object-contain sm:w-[880px] lg:w-[1000px]"
           />
         </Link>
 

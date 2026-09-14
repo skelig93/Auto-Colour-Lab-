@@ -8,7 +8,7 @@ export function SiteFooter() {
           <img
             src="/assets/images/auto-paint-lab-logo-clean.webp"
             alt="Auto Paint Lab Auckland"
-            className="mb-4 h-44 w-auto object-contain sm:h-52"
+            className="mb-4 h-[22rem] w-auto object-contain sm:h-[26rem]"
           />
           <p className="max-w-sm text-sm text-silver">
             Independent automotive spray painting, paint repairs and resprays across Auckland.
