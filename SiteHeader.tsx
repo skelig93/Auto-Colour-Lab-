@@ -25,14 +25,15 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex min-h-[140px] w-full max-w-6xl items-center justify-between px-4 py-4">
-        <Link to="/" className="flex items-center gap-2.5 sm:gap-3" onClick={() => setOpen(false)}>
+      <div className="mx-auto flex min-h-[180px] w-full max-w-6xl items-center justify-between px-4 py-5 sm:min-h-[200px] sm:py-6">
+        <Link to="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)}>
           <img
             src="/assets/images/auto-paint-lab-logo-clean.webp"
             alt="Auto Paint Lab Auckland"
-            className="h-28 w-auto object-contain sm:h-32"
+            className="h-36 w-auto max-w-[72vw] object-contain sm:h-44 lg:h-48"
           />
         </Link>
+
         <nav className="hidden items-center gap-5 lg:flex">
           {primaryLinks.map((l) =>
             l.to.includes("#") ? (
@@ -45,6 +46,7 @@ export function SiteHeader() {
               </Link>
             ),
           )}
+
           <div className="relative">
             <button
               type="button"
@@ -54,6 +56,7 @@ export function SiteHeader() {
             >
               More <ChevronDown className="size-4" />
             </button>
+
             {moreOpen ? (
               <div className="absolute right-0 top-full z-50 mt-2 min-w-[220px] rounded-lg border border-border bg-surface py-2 shadow-lg">
                 {moreLinks.map((l) => (
@@ -70,14 +73,17 @@ export function SiteHeader() {
             ) : null}
           </div>
         </nav>
+
         <div className="flex items-center gap-2">
           <a href="tel:+642041104094" className="hidden items-center gap-2 text-sm text-muted md:flex">
             <Phone className="size-4 text-accent" />
             020 411 04094
           </a>
+
           <Button asChild size="sm" className="hidden sm:inline-flex">
             <Link to="/booking">Get a quote</Link>
           </Button>
+
           <button
             type="button"
             className="inline-flex size-11 items-center justify-center lg:hidden"
@@ -88,6 +94,7 @@ export function SiteHeader() {
           </button>
         </div>
       </div>
+
       <div className={cn("border-t border-border bg-surface lg:hidden", open ? "block" : "hidden")}>
         <div className="flex flex-col gap-1 px-4 py-4">
           {[...primaryLinks, ...moreLinks].map((l) =>
@@ -111,6 +118,7 @@ export function SiteHeader() {
               </Link>
             ),
           )}
+
           <a href="tel:+642041104094" className="flex h-11 items-center text-sm">
             Call Anthony — 020 411 04094
           </a>
